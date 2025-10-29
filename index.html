@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale-1.0">
+    <title>Atharva Zore - Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Font: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Apply the font to the body */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a; /* bg-slate-900 */
+        }
+        /* Custom scrollbar for a more modern feel */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1e293b; /* bg-slate-800 */
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #38bdf8; /* bg-sky-400 */
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #0ea5e9; /* bg-sky-500 */
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        .section-header {
+            @apply text-2xl font-bold text-white mb-6 border-b-2 border-sky-400 pb-2;
+        }
+    </style>
+</head>
+<body class="text-slate-200 p-4 md:p-8">
+
+    <!-- Main Container -->
+    <div class="max-w-4xl mx-auto">
+
+        <!-- === HEADER & CONTACT SECTION === -->
+        <header class="flex flex-col sm:flex-row items-start sm:items-center justify-between border-b border-slate-700 pb-8">
+            <!-- Left Side: Profile -->
+            <div class="flex items-center">
+                <!-- Profile Picture Placeholder -->
+                <div class="flex-shrink-0 w-24 h-24 md:w-28 md:h-28 rounded-full bg-slate-800 border-2 border-sky-400 flex items-center justify-center">
+                    <!-- Placeholder User Icon -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-slate-500" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
+                    </svg>
+                </div>
+                <div class="ml-4 md:ml-6">
+                    <h1 class="text-3xl md:text-4xl font-extrabold text-white">Atharva Vijay Zore</h1>
+                    <p class="text-xl md:text-2xl font-medium text-sky-400">B.Sc. Computer Science Student</p>
+                    <p class="text-lg text-slate-300">Aspiring Data Scientist</p>
+                </div>
+            </div>
+            
+            <!-- Right Side: Contact Links -->
+            <div class="w-full sm:w-auto mt-6 sm:mt-0 flex flex-col items-start sm:items-end space-y-2">
+                <!-- GitHub -->
+                <a href="https://github.com/Atharva8400" target="_blank" rel="noopener noreferrer" class="flex items-center text-slate-300 hover:text-sky-400 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.91 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                    <span>Atharva8400</span>
+                </a>
+                <!-- LinkedIn -->
+                <a href="https://linkedin.com/in/atharvazore8400" target="_blank" rel="noopener noreferrer" class="flex items-center text-slate-300 hover:text-sky-400 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                    </svg>
+                    <span>atharvazore8400</span>
+                </a>
+                <!-- Email -->
+                <a href="mailto:1132220854@mitwpu.edu.in" class="flex items-center text-slate-300 hover:text-sky-400 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M2.003 5.884L10 10.798l7.997-4.914A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                        <path d="M18 8.116l-8 4.914-8-4.914V16a2 2 0 002 2h12a2 2 0 002-2V8.116z" />
+                    </svg>
+                    <span>1132220854@mitwpu.edu.in</span>
+                </a>
+                <!-- Phone -->
+                <span class="flex items-center text-slate-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2.153a1 1 0 01-.986-.836l-.74-4.435a1 1 0 01.54-1.06l1.548-.773a11.037 11.037 0 00-6.105-6.105l-.774 1.548a1 1 0 01-1.059.54l-4.435-.74a1 1 0 01-.836-.986V3z" />
+                    </svg>
+                    <span>+91 9067001867</span>
+                </span>
+            </div>
+        </header>
+
+        <main class="mt-10">
+
+            <!-- === ABOUT ME SECTION === -->
+            <section id="about" class="mb-12">
+                <h2 class="section-header">About Me</h2>
+                <p class="text-slate-300 leading-relaxed">
+                    A dedicated and proactive Computer Science student (CGPA: 7.26) with a passion for data-driven solutions. I have a strong foundation in data science, demonstrated by professional certifications from Oracle (OCI Data Science Professional) and IBM. I am experienced in developing practical projects involving web technologies and IoT data monitoring. I am currently expanding my skills in AI/ML through a project on smart transportation and am eager to apply my knowledge in a professional setting.
+                </p>
+            </section>
+
+            <!-- === PROJECTS SECTION === -->
+            <section id="projects" class="mb-12">
+                <h2 class="section-header">Projects</h2>
+                <div class="grid md:grid-cols-2 gap-6">
+
+                    <!-- Project Card 1: AI/ML Project -->
+                    <div class="bg-slate-800 p-6 rounded-lg shadow-xl hover:shadow-2xl hover:scale-[1.02] transition-all">
+                        <h3 class="text-xl font-semibold text-sky-400">Smart Transportation</h3>
+                        <span class="text-sm font-medium text-yellow-400">(In Progress)</span>
+                        <p class="mt-2 text-slate-300">Currently developing an AI/ML-based project focused on creating smart transportation solutions.</p>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span class="bg-sky-900 text-sky-300 px-3 py-1 rounded-full text-xs font-medium">AI/ML</span>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 2: E-Voting System -->
+                    <div class="bg-slate-800 p-6 rounded-lg shadow-xl hover:shadow-2xl hover:scale-[1.02] transition-all">
+                        <h3 class="text-xl font-semibold text-sky-400">Mini Project - E-Voting System</h3>
+                        <span class="text-sm text-slate-400">(Aug 2024 - Dec 2024)</span>
+                        <p class="mt-2 text-slate-300">Creating a website-based platform to allow organizational members to cast their votes electronically via any internet-connected device.</p>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span class="bg-sky-900 text-sky-300 px-3 py-1 rounded-full text-xs font-medium">Web Development</span>
+                            <span class="bg-sky-900 text-sky-300 px-3 py-1 rounded-full text-xs font-medium">Authentication</span>
+                            <span class="bg-sky-900 text-sky-300 px-3 py-1 rounded-full text-xs font-medium">Database</span>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 3: Siemens IoT -->
+                    <div class="bg-slate-800 p-6 rounded-lg shadow-xl hover:shadow-2xl hover:scale-[1.02] transition-all">
+                        <h3 class="text-xl font-semibold text-sky-400">Internet of Things Project</h3>
+                        <span class="text-sm text-slate-400">(Jul 2024)</span>
+                        <p class="mt-2 text-slate-300">Created a virtual IoT model for a motor pump using Asset Manager. Monitored the asset live using SIEMENS Insights Hub and used Node-Red for virtual programming.</p>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span class="bg-sky-900 text-sky-300 px-3 py-1 rounded-full text-xs font-medium">IoT</span>
+                            <span class="bg-sky-900 text-sky-300 px-3 py-1 rounded-full text-xs font-medium">Siemens Insights Hub</span>
+                            <span class="bg-sky-900 text-sky-300 px-3 py-1 rounded-full text-xs font-medium">Node-Red</span>
+                            <span class="bg-sky-900 text-sky-300 px-3 py-1 rounded-full text-xs font-medium">Data Monitoring</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- === CERTIFICATIONS SECTION === -->
+            <section id="certifications" class="mb-12">
+                <h2 class="section-header">Certifications</h2>
+                <ul class="list-disc list-outside space-y-3 pl-5 text-slate-300">
+                    <li>
+                        <strong class="text-white">Oracle Cloud Infrastructure 2025 Certified Data Science Professional</strong>
+                        <span class="text-slate-400 block sm:inline"> - ORACLE CORPORATION (Sep 2025)</span>
+                    </li>
+                    <li>
+                        <strong class="text-white">What is Data Science?</strong>
+                        <span class="text-slate-400 block sm:inline"> - IBM via Coursera (Oct 2025)</span>
+                    </li>
+                    <li>
+                        <strong class="text-white">Certification of Internet of Things</strong>
+                        <span class="text-slate-400 block sm:inline"> - SIEMENS INDUSTRY SOFTWARE PVT. LTD. (Jul 2024)</span>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- === EDUCATION & EXPERIENCE SECTION === -->
+            <div class="grid md:grid-cols-2 gap-12">
+
+                <!-- Education -->
+                <section id="education" class="mb-12">
+                    <h2 class="section-header">Education</h2>
+                    <div class="space-y-4">
+                        <!-- B.Sc. -->
+                        <div class="bg-slate-800 p-4 rounded-lg">
+                            <h3 class="font-semibold text-white">B.Sc, Computer Science (Expected 2026)</h3>
+                            <p class="text-slate-400">MIT-WPU</p>
+                            <p class="text-slate-300 font-medium">CGPA: 7.26</p>
+                        </div>
+                        <!-- Class XII -->
+                        <div class="bg-slate-800 p-4 rounded-lg">
+                            <h3 class="font-semibold text-white">Class XII (2022)</h3>
+                            <p class="text-slate-400">MIT JUNIOR COLLEGE (MSBSHSE)</p>
+                            <p class="text-slate-300 font-medium">Score: 56.67%</p>
+                        </div>
+                        <!-- Class X -->
+                        <div class="bg-slate-800 p-4 rounded-lg">
+                            <h3 class="font-semibold text-white">Class X (2020)</h3>
+                            <p class="text-slate-400">MIT VGS SCHOOL (MSBSHSE)</p>
+                            <p class="text-slate-300 font-medium">Score: 84%</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Experience & Skills -->
+                <section id="experience" class="mb-12">
+                    <!-- Volunteer Experience -->
+                    <h2 class="section-header">Volunteer Experience</h2>
+                    <div class="bg-slate-800 p-4 rounded-lg mb-8">
+                        <h3 class="font-semibold text-white">Volunteer - MIT-SOG</h3>
+                        <p class="text-slate-400">(Jun 2023)</p>
+                        <p class="mt-2 text-slate-300">Participated in the National Legislator's Conference Bharat (NLC BHARAT) at Jio World Drive Centre Mumbai, contributing to the event's goal of fostering education and enhancing democratic ideals.</p>
+                    </div>
+
+                    <!-- Skills & Languages -->
+                    <h2 class="section-header">Skills & Languages</h2>
+                    <div class="bg-slate-800 p-4 rounded-lg">
+                        <h3 class="font-semibold text-white mb-2">Languages Spoken</h3>
+                        <ul class="list-disc list-outside pl-5 text.slate-300">
+                            <li>English</li>
+                            <li>Marathi</li>
+                            <li>Hindi</li>
+                        </ul>
+                        <h3 class="font-semibold text-white mt-4 mb-2">Extra-Curricular</h3>
+                        <ul class="list-disc list-outside pl-5 text.slate-300">
+                            <li>Professional District Level Swimmer</li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <!-- === FOOTER === -->
+        <footer class="text-center text-slate-500 mt-12 py-6 border-t border-slate-700">
+            <p>&copy; 2025 Atharva Vijay Zore</p>
+        </footer>
+
+    </div> <!-- End Main Container -->
+
+</body>
+</html>
+
