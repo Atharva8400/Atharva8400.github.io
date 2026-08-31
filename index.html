@@ -1,609 +1,1882 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Atharva Vijay Zore | Data Science & Analytics</title>
-<meta name="description" content="Atharva Vijay Zore — Computer Science graduate with experience in Data Science, Data Analytics, Machine Learning and Artificial Intelligence. Incoming MSc Data Science student at the University of York, UK.">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <title>Atharva Vijay Zore | Data Science</title>
 
-<style>
-:root{
---bg:#f7f8fa;
---white:#fff;
---text:#111318;
---secondary:#4f5663;
---muted:#737b88;
---border:#e4e7eb;
---accent:#1d4ed8;
---accent-light:#eff4ff;
---dark:#111318;
---max:1180px;
---radius:18px
-}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--text);font-family:"DM Sans",sans-serif;line-height:1.7}
-a{text-decoration:none;color:inherit}
-.container{width:min(92%,var(--max));margin:auto}
+    <meta name="description" content="Atharva Vijay Zore — Computer Science graduate, Data Science and Data Analytics professional, and incoming MSc Data Science student at the University of York.">
 
-nav{position:sticky;top:0;z-index:999;background:rgba(247,248,250,.94);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
-.nav{height:74px;display:flex;align-items:center;justify-content:space-between}
-.logo{font-family:Manrope;font-size:21px;font-weight:800;letter-spacing:-.7px}
-.logo span{color:var(--accent)}
-.nav-links{display:flex;gap:27px;list-style:none;font-size:13px;font-weight:700;color:var(--secondary)}
-.nav-links a:hover{color:var(--accent)}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-.hero{padding:105px 0 85px}
-.hero-grid{display:grid;grid-template-columns:1.5fr .7fr;gap:80px;align-items:center}
-.eyebrow{display:inline-flex;align-items:center;gap:9px;padding:7px 13px;border:1px solid var(--border);border-radius:999px;background:white;color:var(--secondary);font-size:12px;font-weight:700;margin-bottom:25px}
-.dot{width:8px;height:8px;background:#16a34a;border-radius:50%}
-h1{font-family:Manrope;font-size:clamp(48px,7vw,78px);line-height:1;letter-spacing:-4px;margin-bottom:24px}
-h1 span{color:var(--accent)}
-.hero-title{color:var(--secondary);font-size:20px;font-weight:600;margin-bottom:20px}
-.hero-description{max-width:700px;color:var(--muted);font-size:17px;line-height:1.85;margin-bottom:32px}
-.buttons{display:flex;flex-wrap:wrap;gap:10px}
-.button{padding:12px 19px;border-radius:10px;border:1px solid var(--border);font-size:13px;font-weight:700;transition:.2s}
-.button-primary{background:var(--dark);color:white;border-color:var(--dark)}
-.button-secondary{background:white}
-.button:hover{transform:translateY(-2px)}
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
 
-.profile-card{background:white;border:1px solid var(--border);border-radius:22px;padding:28px;box-shadow:0 20px 60px rgba(20,30,50,.06)}
-.profile-photo{width:125px;height:155px;object-fit:cover;margin:0 auto 25px;border-radius:10px;border:1px solid var(--border)}
-.profile-label{color:var(--muted);text-transform:uppercase;letter-spacing:1px;font-size:10px;font-weight:800;margin-bottom:7px}
-.profile-main{font-family:Manrope;font-size:25px;font-weight:800;line-height:1.2}
-.profile-sub{color:var(--muted);font-size:13px;margin-top:4px}
-.divider{height:1px;background:var(--border);margin:24px 0}
+    <style>
 
-.facts{padding:0 0 85px}
-.facts-grid{display:grid;grid-template-columns:repeat(4,1fr);background:white;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden}
-.fact{padding:27px;border-right:1px solid var(--border)}
-.fact:last-child{border-right:none}
-.fact-number{font-family:Manrope;font-size:27px;font-weight:800;margin-bottom:3px}
-.fact-label{color:var(--muted);font-size:12px}
+        :root {
+            --bg: #f6f7f9;
+            --card: #ffffff;
+            --text: #111318;
+            --text-light: #626a76;
+            --muted: #89919d;
+            --border: #e5e7eb;
+            --blue: #2454d6;
+            --blue-light: #eef3ff;
+            --dark: #111318;
+            --max-width: 1180px;
+        }
 
-section{padding:100px 0}
-.section-number{color:var(--accent);font-size:11px;font-weight:800;letter-spacing:1.5px;margin-bottom:10px}
-.section-title{font-family:Manrope;font-size:clamp(32px,4vw,48px);line-height:1.12;letter-spacing:-2px}
-.section-description{max-width:700px;color:var(--muted);margin-top:14px}
-.section-header{margin-bottom:48px}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-.about-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:70px}
-.about-text{color:var(--secondary);font-size:16px}
-.about-text p+p{margin-top:18px}
-.about-details{display:grid;gap:12px}
-.detail{background:white;border:1px solid var(--border);border-radius:14px;padding:20px}
-.detail strong{display:block;margin-bottom:3px}
-.detail span{color:var(--muted);font-size:13px}
+        html {
+            scroll-behavior: smooth;
+        }
 
-.experience-list{display:grid;gap:18px}
-.experience{display:grid;grid-template-columns:210px 1fr;gap:45px;padding:32px;background:white;border:1px solid var(--border);border-radius:var(--radius);transition:.2s}
-.experience:hover,.project:hover{transform:translateY(-3px);box-shadow:0 18px 45px rgba(20,30,50,.06)}
-.experience-meta{color:var(--muted);font-size:13px}
-.experience h3{font-family:Manrope;font-size:23px;line-height:1.2}
-.company{color:var(--accent);font-weight:800;margin:5px 0 17px}
-.experience p{color:var(--secondary);font-size:14px}
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: "DM Sans", sans-serif;
+            line-height: 1.7;
+        }
 
-.tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:17px}
-.tag{padding:5px 9px;border-radius:6px;background:var(--accent-light);color:#27499a;font-size:11px;font-weight:800}
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
 
-.education-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
-.education{background:white;border:1px solid var(--border);border-radius:var(--radius);padding:32px}
-.education-badge{display:inline-block;background:var(--accent-light);color:var(--accent);padding:5px 9px;border-radius:6px;font-size:10px;font-weight:800;margin-bottom:20px}
-.education h3{font-family:Manrope;font-size:23px;line-height:1.3}
-.institution{font-weight:700;margin-top:7px}
-.education-meta{color:var(--muted);font-size:13px;margin-top:10px}
-.score{margin-top:25px;padding-top:20px;border-top:1px solid var(--border)}
-.score strong{font-family:Manrope;font-size:34px}
-.score span{display:block;color:var(--muted);font-size:12px}
+        .container {
+            width: min(92%, var(--max-width));
+            margin: auto;
+        }
 
-.program-card{background:var(--dark);color:white;border-radius:24px;padding:50px;display:grid;grid-template-columns:1.2fr .8fr;gap:60px;align-items:center}
-.program-card .section-number{color:#91adff}
-.program-card h3{font-family:Manrope;font-size:clamp(30px,4vw,48px);line-height:1.12;letter-spacing:-2px}
-.program-card p{color:#b9bec8;margin-top:17px}
-.program-info{border-left:1px solid #343840;padding-left:35px}
-.program-item{margin-bottom:20px}
-.program-item small{display:block;color:#9da4af;text-transform:uppercase;letter-spacing:1px;font-size:9px;font-weight:800}
-.program-item strong{display:block;margin-top:4px;font-size:16px}
 
-.projects-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
-.project{background:white;border:1px solid var(--border);border-radius:var(--radius);padding:30px;transition:.2s}
-.project-category{color:var(--accent);font-size:10px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;margin-bottom:13px}
-.project h3{font-family:Manrope;font-size:22px;margin-bottom:11px}
-.project p{color:var(--muted);font-size:14px}
+        /* =========================
+           NAVBAR
+        ========================= */
 
-.naip{background:white;border:1px solid var(--border);border-radius:var(--radius);padding:32px}
-.naip h3{font-family:Manrope;font-size:24px}
-.naip-company{color:var(--accent);font-weight:800;margin:4px 0 18px}
-.naip ul{padding-left:20px;color:var(--secondary)}
-.naip li+li{margin-top:9px}
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(246, 247, 249, 0.92);
+            backdrop-filter: blur(18px);
+            border-bottom: 1px solid rgba(229, 231, 235, 0.85);
+        }
 
-.skills-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:15px}
-.skill{background:white;border:1px solid var(--border);border-radius:14px;padding:23px}
-.skill-title{font-weight:800;margin-bottom:8px}
-.skill-content{color:var(--muted);font-size:14px}
+        .navbar {
+            height: 74px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
 
-.certifications{display:grid;gap:12px}
-.certificate{background:white;border:1px solid var(--border);border-radius:14px;padding:23px 27px;display:flex;justify-content:space-between;align-items:center;gap:20px}
-.certificate-title{font-weight:800}
-.certificate-provider{color:var(--muted);font-size:13px;margin-top:3px}
-.certificate-date{color:var(--muted);font-size:12px;white-space:nowrap}
+        .logo {
+            font-family: "Manrope", sans-serif;
+            font-size: 21px;
+            font-weight: 800;
+            letter-spacing: -0.7px;
+        }
 
-.language-grid{display:flex;flex-wrap:wrap;gap:10px}
-.language{background:white;border:1px solid var(--border);border-radius:10px;padding:10px 18px;font-size:13px;font-weight:700}
+        .logo span {
+            color: var(--blue);
+        }
 
-.contact{background:var(--dark);color:white;border-radius:24px;padding:55px;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center}
-.contact h2{font-family:Manrope;font-size:clamp(32px,4vw,48px);letter-spacing:-2px;line-height:1.1}
-.contact p{color:#b8bec8;margin-top:12px;max-width:650px}
-.contact-links{display:grid;gap:10px}
-.contact-link{background:white;color:var(--dark);padding:11px 18px;border-radius:9px;font-size:13px;font-weight:800;text-align:center}
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 28px;
+            color: var(--text-light);
+            font-size: 13px;
+            font-weight: 700;
+        }
 
-footer{padding:35px 0}
-.footer{display:flex;justify-content:space-between;gap:20px;color:var(--muted);font-size:12px}
+        .nav-links a {
+            transition: 0.2s ease;
+        }
 
-@media(max-width:900px){
-.nav-links{display:none}
-.hero-grid,.about-grid,.program-card{grid-template-columns:1fr}
-.hero-grid{gap:45px}
-.facts-grid{grid-template-columns:repeat(2,1fr)}
-.fact:nth-child(2){border-right:none}
-.fact:nth-child(-n+2){border-bottom:1px solid var(--border)}
-.program-info{border-left:none;border-top:1px solid #343840;padding-left:0;padding-top:30px}
-.education-grid,.projects-grid,.skills-grid{grid-template-columns:1fr}
-.contact{grid-template-columns:1fr}
-}
+        .nav-links a:hover {
+            color: var(--blue);
+        }
 
-@media(max-width:600px){
-.hero{padding-top:70px}
-h1{letter-spacing:-2.5px}
-section{padding:75px 0}
-.facts-grid{grid-template-columns:1fr}
-.fact{border-right:none;border-bottom:1px solid var(--border)}
-.fact:last-child{border-bottom:none}
-.experience{grid-template-columns:1fr;gap:12px}
-.certificate{flex-direction:column;align-items:flex-start}
-.program-card,.contact{padding:32px 25px}
-.footer{flex-direction:column}
-}
-</style>
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            padding: 105px 0 85px;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.45fr 0.75fr;
+            gap: 85px;
+            align-items: center;
+        }
+
+        .status {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            padding: 7px 13px;
+            border: 1px solid var(--border);
+            background: var(--card);
+            border-radius: 100px;
+            color: var(--text-light);
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 25px;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #16a34a;
+        }
+
+        .hero h1 {
+            font-family: "Manrope", sans-serif;
+            font-size: clamp(48px, 7vw, 80px);
+            line-height: 0.98;
+            letter-spacing: -4px;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 span {
+            color: var(--blue);
+        }
+
+        .hero-role {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--text-light);
+            margin-bottom: 20px;
+        }
+
+        .hero-description {
+            max-width: 720px;
+            color: var(--text-light);
+            font-size: 17px;
+            line-height: 1.85;
+            margin-bottom: 32px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .button {
+            padding: 12px 19px;
+            border-radius: 10px;
+            border: 1px solid var(--border);
+            background: var(--card);
+            font-size: 13px;
+            font-weight: 700;
+            transition: 0.2s ease;
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+        }
+
+        .button-primary {
+            background: var(--dark);
+            color: white;
+            border-color: var(--dark);
+        }
+
+
+        /* =========================
+           PROFILE CARD
+        ========================= */
+
+        .profile-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 30px;
+            box-shadow: 0 25px 70px rgba(20, 30, 50, 0.07);
+        }
+
+        .profile-photo {
+            width: 130px;
+            height: 160px;
+            object-fit: cover;
+            display: block;
+            margin: 0 auto 28px;
+            border-radius: 11px;
+            border: 1px solid var(--border);
+        }
+
+        .profile-label {
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            font-size: 10px;
+            font-weight: 800;
+            margin-bottom: 7px;
+        }
+
+        .profile-title {
+            font-family: "Manrope", sans-serif;
+            font-size: 25px;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+
+        .profile-subtitle {
+            color: var(--text-light);
+            font-size: 13px;
+            margin-top: 4px;
+        }
+
+        .profile-divider {
+            height: 1px;
+            background: var(--border);
+            margin: 25px 0;
+        }
+
+
+        /* =========================
+           STATS
+        ========================= */
+
+        .stats {
+            padding-bottom: 85px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            overflow: hidden;
+        }
+
+        .stat {
+            padding: 28px;
+            border-right: 1px solid var(--border);
+        }
+
+        .stat:last-child {
+            border-right: none;
+        }
+
+        .stat-number {
+            font-family: "Manrope", sans-serif;
+            font-size: 27px;
+            font-weight: 800;
+        }
+
+        .stat-text {
+            color: var(--muted);
+            font-size: 12px;
+            margin-top: 2px;
+        }
+
+
+        /* =========================
+           SECTIONS
+        ========================= */
+
+        section {
+            padding: 100px 0;
+        }
+
+        .section-label {
+            color: var(--blue);
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            margin-bottom: 10px;
+        }
+
+        .section-title {
+            font-family: "Manrope", sans-serif;
+            font-size: clamp(32px, 4vw, 50px);
+            line-height: 1.1;
+            letter-spacing: -2px;
+        }
+
+        .section-description {
+            max-width: 720px;
+            color: var(--text-light);
+            margin-top: 15px;
+        }
+
+        .section-header {
+            margin-bottom: 48px;
+        }
+
+
+        /* =========================
+           ABOUT
+        ========================= */
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 75px;
+        }
+
+        .about-text {
+            color: var(--text-light);
+            font-size: 16px;
+        }
+
+        .about-text p + p {
+            margin-top: 18px;
+        }
+
+        .about-details {
+            display: grid;
+            gap: 12px;
+        }
+
+        .about-detail {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 20px;
+        }
+
+        .about-detail strong {
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .about-detail span {
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+
+        /* =========================
+           EXPERIENCE
+        ========================= */
+
+        .experience-list {
+            display: grid;
+            gap: 18px;
+        }
+
+        .experience {
+            display: grid;
+            grid-template-columns: 210px 1fr;
+            gap: 45px;
+            padding: 34px;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            transition: 0.2s ease;
+        }
+
+        .experience:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 18px 50px rgba(20, 30, 50, 0.06);
+        }
+
+        .experience-date {
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        .experience h3 {
+            font-family: "Manrope", sans-serif;
+            font-size: 23px;
+            line-height: 1.2;
+        }
+
+        .company {
+            color: var(--blue);
+            font-weight: 800;
+            margin: 5px 0 17px;
+        }
+
+        .experience p {
+            color: var(--text-light);
+            font-size: 14px;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 7px;
+            margin-top: 17px;
+        }
+
+        .tag {
+            padding: 5px 9px;
+            border-radius: 6px;
+            background: var(--blue-light);
+            color: #294999;
+            font-size: 11px;
+            font-weight: 800;
+        }
+
+
+        /* =========================
+           EDUCATION
+        ========================= */
+
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+        }
+
+        .education {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            padding: 32px;
+        }
+
+        .education-badge {
+            display: inline-block;
+            padding: 5px 9px;
+            border-radius: 6px;
+            background: var(--blue-light);
+            color: var(--blue);
+            font-size: 10px;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .education h3 {
+            font-family: "Manrope", sans-serif;
+            font-size: 23px;
+            line-height: 1.3;
+        }
+
+        .institution {
+            font-weight: 700;
+            margin-top: 7px;
+        }
+
+        .education-meta {
+            color: var(--muted);
+            font-size: 13px;
+            margin-top: 8px;
+        }
+
+        .grade {
+            border-top: 1px solid var(--border);
+            margin-top: 24px;
+            padding-top: 20px;
+        }
+
+        .grade strong {
+            font-family: "Manrope", sans-serif;
+            font-size: 34px;
+        }
+
+        .grade span {
+            display: block;
+            color: var(--muted);
+            font-size: 12px;
+        }
+
+
+        /* =========================
+           YORK
+        ========================= */
+
+        .york-section {
+            background: var(--dark);
+            color: white;
+        }
+
+        .york-card {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 65px;
+            align-items: center;
+        }
+
+        .york-label {
+            color: #9db4ff;
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            margin-bottom: 12px;
+        }
+
+        .york-card h2 {
+            font-family: "Manrope", sans-serif;
+            font-size: clamp(35px, 5vw, 55px);
+            line-height: 1.08;
+            letter-spacing: -2.5px;
+        }
+
+        .york-card p {
+            color: #b9bec8;
+            margin-top: 18px;
+            max-width: 680px;
+        }
+
+        .york-info {
+            border-left: 1px solid #343840;
+            padding-left: 35px;
+        }
+
+        .york-item {
+            margin-bottom: 23px;
+        }
+
+        .york-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .york-item small {
+            display: block;
+            color: #969da8;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 9px;
+            font-weight: 800;
+        }
+
+        .york-item strong {
+            display: block;
+            margin-top: 4px;
+            font-size: 16px;
+        }
+
+
+        /* =========================
+           PROJECTS
+        ========================= */
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+        }
+
+        .project {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            padding: 32px;
+            transition: 0.2s ease;
+        }
+
+        .project:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 18px 50px rgba(20, 30, 50, 0.06);
+        }
+
+        .project-type {
+            color: var(--blue);
+            text-transform: uppercase;
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 1.2px;
+            margin-bottom: 13px;
+        }
+
+        .project h3 {
+            font-family: "Manrope", sans-serif;
+            font-size: 22px;
+            margin-bottom: 12px;
+        }
+
+        .project p {
+            color: var(--text-light);
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           NAIP
+        ========================= */
+
+        .naip {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            padding: 34px;
+        }
+
+        .naip h3 {
+            font-family: "Manrope", sans-serif;
+            font-size: 25px;
+        }
+
+        .naip-title {
+            color: var(--blue);
+            font-weight: 800;
+            margin: 4px 0 18px;
+        }
+
+        .naip ul {
+            padding-left: 20px;
+            color: var(--text-light);
+        }
+
+        .naip li + li {
+            margin-top: 9px;
+        }
+
+
+        /* =========================
+           SKILLS
+        ========================= */
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .skill {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 23px;
+        }
+
+        .skill strong {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .skill span {
+            color: var(--text-light);
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           CERTIFICATIONS
+        ========================= */
+
+        .certifications {
+            display: grid;
+            gap: 12px;
+        }
+
+        .certificate {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 24px 27px;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+        }
+
+        .certificate-title {
+            font-weight: 800;
+        }
+
+        .certificate-provider {
+            color: var(--muted);
+            font-size: 13px;
+            margin-top: 3px;
+        }
+
+        .certificate-year {
+            color: var(--muted);
+            font-size: 12px;
+            white-space: nowrap;
+        }
+
+
+        /* =========================
+           LANGUAGES
+        ========================= */
+
+        .languages {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .language {
+            padding: 10px 18px;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+
+        /* =========================
+           CONTACT
+        ========================= */
+
+        .contact-box {
+            background: var(--dark);
+            color: white;
+            border-radius: 24px;
+            padding: 55px;
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 45px;
+            align-items: center;
+        }
+
+        .contact-box h2 {
+            font-family: "Manrope", sans-serif;
+            font-size: clamp(35px, 5vw, 52px);
+            line-height: 1.05;
+            letter-spacing: -2px;
+        }
+
+        .contact-box p {
+            color: #b8bec8;
+            margin-top: 14px;
+            max-width: 650px;
+        }
+
+        .contact-links {
+            display: grid;
+            gap: 10px;
+        }
+
+        .contact-link {
+            background: white;
+            color: var(--dark);
+            padding: 11px 20px;
+            border-radius: 9px;
+            text-align: center;
+            font-size: 13px;
+            font-weight: 800;
+            transition: 0.2s ease;
+        }
+
+        .contact-link:hover {
+            transform: translateY(-2px);
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            padding: 35px 0;
+        }
+
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            color: var(--muted);
+            font-size: 12px;
+        }
+
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 900px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero-grid,
+            .about-grid,
+            .york-card {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-grid {
+                gap: 45px;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .stat:nth-child(2) {
+                border-right: none;
+            }
+
+            .stat:nth-child(-n+2) {
+                border-bottom: 1px solid var(--border);
+            }
+
+            .education-grid,
+            .projects-grid,
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .york-info {
+                border-left: none;
+                border-top: 1px solid #343840;
+                padding-left: 0;
+                padding-top: 30px;
+            }
+
+            .contact-box {
+                grid-template-columns: 1fr;
+            }
+        }
+
+
+        @media (max-width: 600px) {
+
+            .hero {
+                padding-top: 70px;
+            }
+
+            .hero h1 {
+                letter-spacing: -2.5px;
+            }
+
+            section {
+                padding: 75px 0;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stat {
+                border-right: none;
+                border-bottom: 1px solid var(--border);
+            }
+
+            .stat:last-child {
+                border-bottom: none;
+            }
+
+            .experience {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
+            .certificate {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .contact-box {
+                padding: 32px 25px;
+            }
+
+            .footer {
+                flex-direction: column;
+            }
+        }
+
+    </style>
 </head>
+
 
 <body>
 
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
 <nav>
-<div class="container nav">
-<a href="#" class="logo">ATHARVA<span>.</span></a>
-<ul class="nav-links">
-<li><a href="#about">About</a></li>
-<li><a href="#experience">Experience</a></li>
-<li><a href="#education">Education</a></li>
-<li><a href="#projects">Projects</a></li>
-<li><a href="#skills">Skills</a></li>
-<li><a href="#certifications">Certifications</a></li>
-<li><a href="#contact">Contact</a></li>
-</ul>
-</div>
+    <div class="container navbar">
+
+        <a href="#" class="logo">
+            ATHARVA<span>.</span>
+        </a>
+
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+    </div>
 </nav>
 
+
+<!-- =========================
+     HERO
+========================= -->
+
 <header class="hero">
-<div class="container hero-grid">
 
-<div>
-<div class="eyebrow"><span class="dot"></span>Computer Science Graduate · Data Science</div>
+    <div class="container hero-grid">
 
-<h1>Atharva<br><span>Vijay Zore.</span></h1>
+        <div>
 
-<div class="hero-title">Data Science · Data Analytics · Machine Learning</div>
+            <div class="status">
+                <span class="status-dot"></span>
+                Computer Science Graduate · Data Science
+            </div>
 
-<p class="hero-description">
-Computer Science graduate with practical experience in Data Science and Data Analytics,
-with a strong interest in machine learning, artificial intelligence and data-driven problem solving.
-</p>
+            <h1>
+                Atharva<br>
+                <span>Vijay Zore.</span>
+            </h1>
 
-<div class="buttons">
-<a href="#experience" class="button button-primary">Explore Experience</a>
-<a href="#projects" class="button button-secondary">View Projects</a>
-<a href="https://www.linkedin.com/in/atharvazore8400/" target="_blank" class="button button-secondary">LinkedIn</a>
-<a href="https://github.com/atharva8400" target="_blank" class="button button-secondary">GitHub</a>
-</div>
-</div>
+            <div class="hero-role">
+                Data Science · Data Analytics · Machine Learning
+            </div>
 
-<div class="profile-card">
+            <p class="hero-description">
+                Computer Science graduate with practical experience in
+                Data Science and Data Analytics, focused on applying
+                analytical thinking, machine learning and artificial
+                intelligence to real-world problems.
+            </p>
 
-<img src="others/PASSPORT%20SIZE.png" alt="Atharva Vijay Zore" class="profile-photo">
+            <div class="hero-buttons">
 
-<div class="profile-label">Current Academic Journey</div>
-<div class="profile-main">MSc Data Science</div>
-<div class="profile-sub">University of York · United Kingdom</div>
+                <a href="#experience" class="button button-primary">
+                    Experience
+                </a>
 
-<div class="divider"></div>
+                <a href="#projects" class="button">
+                    Projects
+                </a>
 
-<div class="profile-label">Undergraduate Degree</div>
-<div class="profile-main">7.50 / 10</div>
-<div class="profile-sub">Final CGPA · Computer Science (Honours)</div>
+                <a href="https://www.linkedin.com/in/atharvazore8400/"
+                   target="_blank"
+                   class="button">
+                    LinkedIn
+                </a>
 
-</div>
-</div>
+                <a href="https://github.com/atharva8400"
+                   target="_blank"
+                   class="button">
+                    GitHub
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- PROFILE -->
+
+        <div class="profile-card">
+
+            <img
+                src="PASSPORT%20SIZE.png"
+                alt="Atharva Vijay Zore"
+                class="profile-photo"
+            >
+
+            <div class="profile-label">
+                Upcoming Academic Programme
+            </div>
+
+            <div class="profile-title">
+                MSc Data Science
+            </div>
+
+            <div class="profile-subtitle">
+                University of York · United Kingdom
+            </div>
+
+            <div class="profile-divider"></div>
+
+            <div class="profile-label">
+                Undergraduate Degree
+            </div>
+
+            <div class="profile-title">
+                7.50 / 10
+            </div>
+
+            <div class="profile-subtitle">
+                Final CGPA · Computer Science (Honours)
+            </div>
+
+        </div>
+
+    </div>
+
 </header>
 
-<div class="facts">
-<div class="container">
-<div class="facts-grid">
 
-<div class="fact">
-<div class="fact-number">7.50</div>
-<div class="fact-label">Final CGPA / 10</div>
+<!-- =========================
+     STATS
+========================= -->
+
+<div class="stats">
+
+    <div class="container">
+
+        <div class="stats-grid">
+
+            <div class="stat">
+                <div class="stat-number">7.50</div>
+                <div class="stat-text">Final CGPA / 10</div>
+            </div>
+
+            <div class="stat">
+                <div class="stat-number">6 Months</div>
+                <div class="stat-text">Data Science Internship</div>
+            </div>
+
+            <div class="stat">
+                <div class="stat-number">6 Months</div>
+                <div class="stat-text">Data Analyst Internship</div>
+            </div>
+
+            <div class="stat">
+                <div class="stat-number">2026</div>
+                <div class="stat-text">MSc Data Science · York</div>
+            </div>
+
+        </div>
+
+    </div>
+
 </div>
 
-<div class="fact">
-<div class="fact-number">6 Months</div>
-<div class="fact-label">Data Science Internship</div>
-</div>
 
-<div class="fact">
-<div class="fact-number">6 Months</div>
-<div class="fact-label">Data Analyst Internship</div>
-</div>
-
-<div class="fact">
-<div class="fact-number">2026</div>
-<div class="fact-label">MSc Data Science · University of York</div>
-</div>
-
-</div>
-</div>
-</div>
+<!-- =========================
+     ABOUT
+========================= -->
 
 <section id="about">
-<div class="container">
 
-<div class="section-header">
-<div class="section-number">01 — ABOUT</div>
-<h2 class="section-title">Building from computer science<br>towards data science.</h2>
-</div>
+    <div class="container">
 
-<div class="about-grid">
+        <div class="section-header">
 
-<div class="about-text">
-<p>I am a Bachelor of Computer Science (Honours) graduate from MIT World Peace University, Pune, with a final CGPA of 7.50/10.</p>
+            <div class="section-label">
+                01 — ABOUT
+            </div>
 
-<p>My interests lie at the intersection of Data Science, Data Analytics, Machine Learning and Artificial Intelligence. Through academic projects, professional internships and industry-oriented programmes, I have developed practical exposure to solving technical and data-driven problems.</p>
+            <h2 class="section-title">
+                From computer science<br>
+                to data science.
+            </h2>
 
-<p>I completed a six-month Data Science internship with Developers Arena and a six-month offline Data Analyst internship with Maestro Intellect, gaining practical exposure to data analysis, exploratory data analysis, data cleaning and data-driven decision-making.</p>
+        </div>
 
-<p>My next academic step is an MSc in Data Science at the University of York, United Kingdom, beginning in September 2026.</p>
-</div>
 
-<div class="about-details">
-<div class="detail"><strong>Academic Background</strong><span>Bachelor of Computer Science (Honours)</span></div>
-<div class="detail"><strong>Academic Performance</strong><span>Final CGPA: 7.50 / 10</span></div>
-<div class="detail"><strong>Professional Focus</strong><span>Data Science · Data Analytics · Machine Learning</span></div>
-<div class="detail"><strong>Next Academic Stage</strong><span>MSc Data Science · University of York, UK</span></div>
-</div>
+        <div class="about-grid">
 
-</div>
-</div>
+            <div class="about-text">
+
+                <p>
+                    I am a Bachelor of Computer Science (Honours) graduate
+                    from MIT World Peace University, Pune, with a final
+                    CGPA of 7.50/10.
+                </p>
+
+                <p>
+                    My academic and professional interests are centred
+                    around Data Science, Data Analytics, Machine Learning
+                    and Artificial Intelligence. I enjoy working with data,
+                    identifying patterns and translating analytical findings
+                    into meaningful insights.
+                </p>
+
+                <p>
+                    I have completed a six-month online internship in
+                    Data Science with Developers Arena and a six-month
+                    offline internship as a Data Analyst with Maestro
+                    Intellect.
+                </p>
+
+                <p>
+                    My next academic step is an MSc in Data Science at
+                    the University of York in the United Kingdom,
+                    beginning in September 2026.
+                </p>
+
+            </div>
+
+
+            <div class="about-details">
+
+                <div class="about-detail">
+                    <strong>Education</strong>
+                    <span>
+                        Bachelor of Computer Science (Honours)
+                    </span>
+                </div>
+
+                <div class="about-detail">
+                    <strong>Final CGPA</strong>
+                    <span>
+                        7.50 / 10
+                    </span>
+                </div>
+
+                <div class="about-detail">
+                    <strong>Professional Focus</strong>
+                    <span>
+                        Data Science · Data Analytics · Machine Learning
+                    </span>
+                </div>
+
+                <div class="about-detail">
+                    <strong>Next Academic Stage</strong>
+                    <span>
+                        MSc Data Science · University of York, UK
+                    </span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
 </section>
+
+
+<!-- =========================
+     EXPERIENCE
+========================= -->
 
 <section id="experience">
-<div class="container">
 
-<div class="section-header">
-<div class="section-number">02 — EXPERIENCE</div>
-<h2 class="section-title">Professional experience.</h2>
-<p class="section-description">Practical exposure across Data Science and Data Analytics, complemented by academic and technical project experience.</p>
-</div>
+    <div class="container">
 
-<div class="experience-list">
+        <div class="section-header">
 
-<article class="experience">
-<div class="experience-meta">6 Months<br>Online Internship</div>
-<div>
-<h3>Data Science Intern</h3>
-<div class="company">Developers Arena</div>
-<p>Completed a six-month online internship focused on practical Data Science experience. Worked with data-oriented workflows and developed hands-on exposure to data preprocessing, analysis and machine learning concepts.</p>
-<div class="tags">
-<span class="tag">Data Science</span>
-<span class="tag">Python</span>
-<span class="tag">Data Analysis</span>
-<span class="tag">Machine Learning</span>
-</div>
-</div>
-</article>
+            <div class="section-label">
+                02 — EXPERIENCE
+            </div>
 
-<article class="experience">
-<div class="experience-meta">6 Months<br>Offline Internship</div>
-<div>
-<h3>Data Analyst Intern</h3>
-<div class="company">Maestro Intellect</div>
-<p>Completed a six-month offline internship as a Data Analyst, working with datasets to perform exploratory data analysis, data cleaning and extract insights that support data-driven decision-making.</p>
-<div class="tags">
-<span class="tag">Data Analysis</span>
-<span class="tag">EDA</span>
-<span class="tag">Data Cleaning</span>
-<span class="tag">Data Insights</span>
-</div>
-</div>
-</article>
+            <h2 class="section-title">
+                Professional experience.
+            </h2>
 
-</div>
-</div>
+            <p class="section-description">
+                Industry exposure across Data Science and Data Analytics,
+                complemented by practical technical work.
+            </p>
+
+        </div>
+
+
+        <div class="experience-list">
+
+
+            <!-- DEVELOPERS ARENA -->
+
+            <article class="experience">
+
+                <div class="experience-date">
+                    6 Months<br>
+                    Online Internship
+                </div>
+
+                <div>
+
+                    <h3>
+                        Data Science Intern
+                    </h3>
+
+                    <div class="company">
+                        Developers Arena
+                    </div>
+
+                    <p>
+                        Completed a six-month online Data Science internship,
+                        gaining practical exposure to data-oriented workflows,
+                        data preprocessing, analysis and machine learning
+                        concepts.
+                    </p>
+
+                    <div class="tags">
+                        <span class="tag">Data Science</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">Data Analysis</span>
+                        <span class="tag">Machine Learning</span>
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- MAESTRO -->
+
+            <article class="experience">
+
+                <div class="experience-date">
+                    6 Months<br>
+                    Offline Internship
+                </div>
+
+                <div>
+
+                    <h3>
+                        Data Analyst Intern
+                    </h3>
+
+                    <div class="company">
+                        Maestro Intellect
+                    </div>
+
+                    <p>
+                        Completed a six-month offline internship as a
+                        Data Analyst, working with datasets to perform
+                        exploratory data analysis, data cleaning and
+                        extract actionable insights for data-driven
+                        decision-making.
+                    </p>
+
+                    <div class="tags">
+                        <span class="tag">Data Analytics</span>
+                        <span class="tag">EDA</span>
+                        <span class="tag">Data Cleaning</span>
+                        <span class="tag">Data Insights</span>
+                    </div>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
 </section>
+
+
+<!-- =========================
+     EDUCATION
+========================= -->
 
 <section id="education">
-<div class="container">
 
-<div class="section-header">
-<div class="section-number">03 — EDUCATION</div>
-<h2 class="section-title">Academic journey.</h2>
-</div>
+    <div class="container">
 
-<div class="education-grid">
+        <div class="section-header">
 
-<article class="education">
-<span class="education-badge">COMPLETED · 2026</span>
-<h3>Bachelor of Computer Science (Honours)</h3>
-<div class="institution">MIT World Peace University</div>
-<div class="education-meta">Pune, Maharashtra · 2022 – 2026</div>
-<div class="score"><strong>7.50 / 10</strong><span>Final Cumulative Grade Point Average</span></div>
-</article>
+            <div class="section-label">
+                03 — EDUCATION
+            </div>
 
-<article class="education">
-<span class="education-badge">UPCOMING · SEPTEMBER 2026</span>
-<h3>MSc Data Science</h3>
-<div class="institution">University of York</div>
-<div class="education-meta">United Kingdom · Department of Computer Science</div>
-<div class="score"><strong>2026</strong><span>September Intake · 1 Year Full-Time</span></div>
-</article>
+            <h2 class="section-title">
+                Academic journey.
+            </h2>
 
-<article class="education">
-<span class="education-badge">COMPLETED · 2022</span>
-<h3>Higher Secondary Education</h3>
-<div class="institution">MIT Junior College</div>
-<div class="education-meta">Class XII · 2021 – 2022</div>
-<div class="score"><strong>56.67%</strong><span>Final Percentage</span></div>
-</article>
+        </div>
 
-<article class="education">
-<span class="education-badge">COMPLETED · 2020</span>
-<h3>Secondary School Education</h3>
-<div class="institution">MIT VGS School</div>
-<div class="education-meta">Class X · 2019 – 2020</div>
-<div class="score"><strong>84%</strong><span>Final Percentage</span></div>
-</article>
 
-</div>
-</div>
+        <div class="education-grid">
+
+
+            <!-- BACHELOR -->
+
+            <article class="education">
+
+                <span class="education-badge">
+                    COMPLETED · 2026
+                </span>
+
+                <h3>
+                    Bachelor of Computer Science (Honours)
+                </h3>
+
+                <div class="institution">
+                    MIT World Peace University
+                </div>
+
+                <div class="education-meta">
+                    Pune, Maharashtra · 2022 – 2026
+                </div>
+
+                <div class="grade">
+                    <strong>7.50 / 10</strong>
+                    <span>Final Cumulative Grade Point Average</span>
+                </div>
+
+            </article>
+
+
+            <!-- YORK -->
+
+            <article class="education">
+
+                <span class="education-badge">
+                    UPCOMING · SEPTEMBER 2026
+                </span>
+
+                <h3>
+                    MSc Data Science
+                </h3>
+
+                <div class="institution">
+                    University of York
+                </div>
+
+                <div class="education-meta">
+                    United Kingdom · Department of Computer Science
+                </div>
+
+                <div class="grade">
+                    <strong>2026</strong>
+                    <span>September Intake · Full-Time</span>
+                </div>
+
+            </article>
+
+
+            <!-- CLASS XII -->
+
+            <article class="education">
+
+                <span class="education-badge">
+                    COMPLETED · 2022
+                </span>
+
+                <h3>
+                    Higher Secondary Education
+                </h3>
+
+                <div class="institution">
+                    MIT Junior College
+                </div>
+
+                <div class="education-meta">
+                    Class XII · 2021 – 2022
+                </div>
+
+                <div class="grade">
+                    <strong>56.67%</strong>
+                    <span>Final Percentage</span>
+                </div>
+
+            </article>
+
+
+            <!-- CLASS X -->
+
+            <article class="education">
+
+                <span class="education-badge">
+                    COMPLETED · 2020
+                </span>
+
+                <h3>
+                    Secondary School Education
+                </h3>
+
+                <div class="institution">
+                    MIT VGS School
+                </div>
+
+                <div class="education-meta">
+                    Class X · 2019 – 2020
+                </div>
+
+                <div class="grade">
+                    <strong>84%</strong>
+                    <span>Final Percentage</span>
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
 </section>
 
-<section>
-<div class="container">
 
-<div class="program-card">
+<!-- =========================
+     UNIVERSITY OF YORK
+========================= -->
 
-<div>
-<div class="section-number">NEXT ACADEMIC CHAPTER</div>
-<h3>MSc Data Science<br>at the University of York.</h3>
-<p>Beginning in September 2026, I will continue my academic journey in the United Kingdom with an MSc in Data Science at the University of York.</p>
-</div>
+<section class="york-section">
 
-<div class="program-info">
+    <div class="container">
 
-<div class="program-item">
-<small>University</small>
-<strong>University of York</strong>
-</div>
+        <div class="york-card">
 
-<div class="program-item">
-<small>Programme</small>
-<strong>MSc Data Science</strong>
-</div>
+            <div>
 
-<div class="program-item">
-<small>Department</small>
-<strong>Department of Computer Science</strong>
-</div>
+                <div class="york-label">
+                    NEXT ACADEMIC CHAPTER
+                </div>
 
-<div class="program-item">
-<small>Start</small>
-<strong>September 2026</strong>
-</div>
+                <h2>
+                    MSc Data Science<br>
+                    at the University of York.
+                </h2>
 
-</div>
-</div>
-</div>
+                <p>
+                    Beginning in September 2026, I will continue my
+                    academic journey in the United Kingdom through the
+                    MSc Data Science programme at the University of York.
+                </p>
+
+            </div>
+
+
+            <div class="york-info">
+
+                <div class="york-item">
+                    <small>University</small>
+                    <strong>University of York</strong>
+                </div>
+
+                <div class="york-item">
+                    <small>Programme</small>
+                    <strong>MSc Data Science</strong>
+                </div>
+
+                <div class="york-item">
+                    <small>Department</small>
+                    <strong>Department of Computer Science</strong>
+                </div>
+
+                <div class="york-item">
+                    <small>Start</small>
+                    <strong>September 2026</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
 </section>
+
+
+<!-- =========================
+     PROJECTS
+========================= -->
 
 <section id="projects">
-<div class="container">
 
-<div class="section-header">
-<div class="section-number">04 — PROJECTS</div>
-<h2 class="section-title">Selected academic work.</h2>
-<p class="section-description">Projects demonstrating practical application of artificial intelligence, machine learning, computer vision and software development.</p>
-</div>
+    <div class="container">
 
-<div class="projects-grid">
+        <div class="section-header">
 
-<article class="project">
-<div class="project-category">Machine Learning · NLP</div>
-<h3>Fake News Detection System</h3>
-<p>Developed a machine learning system for fake news detection using BERT Transformers and Scikit-learn. The project was developed as a full-stack application with a FastAPI backend and Streamlit frontend.</p>
-<div class="tags">
-<span class="tag">Python</span>
-<span class="tag">BERT</span>
-<span class="tag">Scikit-learn</span>
-<span class="tag">FastAPI</span>
-<span class="tag">Streamlit</span>
-</div>
-</article>
+            <div class="section-label">
+                04 — PROJECTS
+            </div>
 
-<article class="project">
-<div class="project-category">Artificial Intelligence · Computer Vision</div>
-<h3>AI-Driven Smart Traffic Management System</h3>
-<p>Developed an AI-driven traffic simulation using OpenCV and Pygame. Implemented adaptive traffic signal logic to prioritise high-density lanes within the simulated environment.</p>
-<div class="tags">
-<span class="tag">Python</span>
-<span class="tag">OpenCV</span>
-<span class="tag">Pygame</span>
-<span class="tag">AI</span>
-</div>
-</article>
+            <h2 class="section-title">
+                Selected academic work.
+            </h2>
 
-</div>
-</div>
+            <p class="section-description">
+                Selected projects demonstrating practical applications
+                of machine learning, artificial intelligence, computer
+                vision and software development.
+            </p>
+
+        </div>
+
+
+        <div class="projects-grid">
+
+
+            <!-- FAKE NEWS -->
+
+            <article class="project">
+
+                <div class="project-type">
+                    Machine Learning · NLP
+                </div>
+
+                <h3>
+                    Fake News Detection System
+                </h3>
+
+                <p>
+                    Built a machine learning system for fake news
+                    detection using BERT Transformers and Scikit-learn.
+                    Developed a full-stack application with FastAPI
+                    as the backend and Streamlit as the frontend.
+                </p>
+
+                <div class="tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">BERT</span>
+                    <span class="tag">Scikit-learn</span>
+                    <span class="tag">FastAPI</span>
+                    <span class="tag">Streamlit</span>
+                </div>
+
+            </article>
+
+
+            <!-- TRAFFIC -->
+
+            <article class="project">
+
+                <div class="project-type">
+                    Artificial Intelligence · Computer Vision
+                </div>
+
+                <h3>
+                    AI-Driven Smart Traffic Management System
+                </h3>
+
+                <p>
+                    Developed an AI-driven traffic simulation using
+                    OpenCV and Pygame. Implemented adaptive signal
+                    logic to prioritise high-density lanes within
+                    the simulated environment.
+                </p>
+
+                <div class="tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">OpenCV</span>
+                    <span class="tag">Pygame</span>
+                    <span class="tag">Artificial Intelligence</span>
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
 </section>
+
+
+<!-- =========================
+     NAIP
+========================= -->
 
 <section>
-<div class="container">
 
-<div class="section-header">
-<div class="section-number">05 — ACADEMIC PROGRAM</div>
-<h2 class="section-title">Industry-oriented learning.</h2>
-</div>
+    <div class="container">
 
-<div class="naip">
-<h3>National Academic Immersion Program (NAIP)</h3>
-<div class="naip-company">NITTTR-Siemens Centre of Excellence · July 2024</div>
+        <div class="section-header">
 
-<ul>
-<li>Successfully completed an intensive immersion programme focused on the Industrial Internet of Things (IoT) Lab.</li>
-<li>Built a virtual IoT model for a motor pump using Siemens Asset Manager and monitored systems through Siemens Insights Hub.</li>
-<li>Implemented virtual programming logic using Node-RED to automate system responses.</li>
-</ul>
+            <div class="section-label">
+                05 — ACADEMIC PROGRAM
+            </div>
 
-<div class="tags">
-<span class="tag">IoT</span>
-<span class="tag">Siemens Asset Manager</span>
-<span class="tag">Siemens Insights Hub</span>
-<span class="tag">Node-RED</span>
-</div>
-</div>
+            <h2 class="section-title">
+                Industry-oriented learning.
+            </h2>
 
-</div>
+        </div>
+
+
+        <div class="naip">
+
+            <h3>
+                National Academic Immersion Program (NAIP)
+            </h3>
+
+            <div class="naip-title">
+                NITTTR-Siemens Centre of Excellence · July 2024
+            </div>
+
+            <ul>
+
+                <li>
+                    Successfully completed an intensive immersion
+                    programme focused on the Industrial Internet
+                    of Things (IoT) Lab.
+                </li>
+
+                <li>
+                    Built a virtual IoT model for a motor pump using
+                    Siemens Asset Manager and monitored systems
+                    through Siemens Insights Hub.
+                </li>
+
+                <li>
+                    Implemented virtual programming logic using
+                    Node-RED to automate system responses.
+                </li>
+
+            </ul>
+
+            <div class="tags">
+
+                <span class="tag">IoT</span>
+                <span class="tag">Siemens Asset Manager</span>
+                <span class="tag">Siemens Insights Hub</span>
+                <span class="tag">Node-RED</span>
+
+            </div>
+
+        </div>
+
+    </div>
+
 </section>
+
+
+<!-- =========================
+     SKILLS
+========================= -->
 
 <section id="skills">
-<div class="container">
 
-<div class="section-header">
-<div class="section-number">06 — SKILLS</div>
-<h2 class="section-title">Technical capabilities.</h2>
-</div>
+    <div class="container">
 
-<div class="skills-grid">
+        <div class="section-header">
 
-<div class="skill">
-<div class="skill-title">Programming & Data</div>
-<div class="skill-content">Python · SQL · Data Analysis · Data Cleaning</div>
-</div>
+            <div class="section-label">
+                06 — SKILLS
+            </div>
 
-<div class="skill">
-<div class="skill-title">Data Science</div>
-<div class="skill-content">Machine Learning · Exploratory Data Analysis (EDA) · Data-driven Problem Solving</div>
-</div>
+            <h2 class="section-title">
+                Technical capabilities.
+            </h2>
 
-<div class="skill">
-<div class="skill-title">Artificial Intelligence</div>
-<div class="skill-content">BERT Transformers · Computer Vision · OpenCV · AI Applications</div>
-</div>
+        </div>
 
-<div class="skill">
-<div class="skill-title">IoT & Industrial Technologies</div>
-<div class="skill-content">IoT Concepts · Siemens Asset Manager · Siemens Insights Hub · Node-RED</div>
-</div>
 
-<div class="skill">
-<div class="skill-title">Software & Frameworks</div>
-<div class="skill-content">FastAPI · Streamlit · Scikit-learn · Pygame</div>
-</div>
+        <div class="skills-grid">
 
-<div class="skill">
-<div class="skill-title">Professional Skills</div>
-<div class="skill-content">Project Management · Teamwork · Leadership · Time Management · Critical Thinking · Communication</div>
-</div>
+            <div class="skill">
+                <strong>Programming & Data</strong>
+                <span>
+                    Python · SQL · Data Analysis · Data Cleaning
+                </span>
+            </div>
 
-</div>
-</div>
+            <div class="skill">
+                <strong>Data Science</strong>
+                <span>
+                    Machine Learning · Exploratory Data Analysis (EDA) ·
+                    Data-driven Problem Solving
+                </span>
+            </div>
+
+            <div class="skill">
+                <strong>Artificial Intelligence</strong>
+                <span>
+                    BERT Transformers · Computer Vision · OpenCV ·
+                    AI Applications
+                </span>
+            </div>
+
+            <div class="skill">
+                <strong>Frameworks & Libraries</strong>
+                <span>
+                    Scikit-learn · FastAPI · Streamlit · Pygame
+                </span>
+            </div>
+
+            <div class="skill">
+                <strong>IoT & Industrial Technologies</strong>
+                <span>
+                    IoT Concepts · Siemens Asset Manager ·
+                    Siemens Insights Hub · Node-RED
+                </span>
+            </div>
+
+            <div class="skill">
+                <strong>Professional Skills</strong>
+                <span>
+                    Project Management · Teamwork · Leadership ·
+                    Time Management · Critical Thinking · Communication
+                </span>
+            </div>
+
+        </div>
+
+    </div>
+
 </section>
 
-<section id="certifications">
-<div class="container">
 
-<div class="section-header">
-<div class="section-number">07 — CERTIFICATIONS</div>
-<h2 class="section-title">Professional learning.</h2>
-</div>
-
-<div class="certifications">
-
-<div class="certificate">
-<div>
-<div class="certificate-title">Oracle Cloud Infrastructure 2025 Certified Data Science Professional</div>
-<div class="certificate-provider">Oracle</div>
-</div>
-<div class="certificate-date">2025</div>
-</div>
-
-<div class="certificate">
-<div>
-<div class="certificate-title">IBM Data Science Professional Certificate</div>
-<div class="certificate-provider">IBM · Coursera</div>
-</div>
-<div class="certificate-date">2025</div>
-</div>
-
-</div>
-</div>
-</section>
+<!-- =========================
+     CERTIFICATIONS
+========================= -->
 
 <section>
-<div class="container">
 
-<div class="section-header">
-<div class="section-number">08 — LANGUAGES</div>
-<h2 class="section-title">Communication.</h2>
-</div>
+    <div class="container">
 
-<div class="language-grid">
-<div class="language">English</div>
-<div class="language">Hindi</div>
-<div class="language">Marathi</div>
-</div>
+        <div class="section-header">
 
-</div>
+            <div class="section-label">
+                07 — CERTIFICATIONS
+            </div>
+
+            <h2 class="section-title">
+                Professional learning.
+            </h2>
+
+        </div>
+
+
+        <div class="certifications">
+
+            <div class="certificate">
+
+                <div>
+                    <div class="certificate-title">
+                        Oracle Cloud Infrastructure 2025
+                        Certified Data Science Professional
+                    </div>
+
+                    <div class="certificate-provider">
+                        Oracle
+                    </div>
+                </div>
+
+                <div class="certificate-year">
+                    2025
+                </div>
+
+            </div>
+
+
+            <div class="certificate">
+
+                <div>
+                    <div class="certificate-title">
+                        IBM Data Science Professional Certificate
+                    </div>
+
+                    <div class="certificate-provider">
+                        IBM · Coursera
+                    </div>
+                </div>
+
+                <div class="certificate-year">
+                    2025
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
 </section>
+
+
+<!-- =========================
+     LANGUAGES
+========================= -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <div class="section-label">
+                08 — LANGUAGES
+            </div>
+
+            <h2 class="section-title">
+                Communication.
+            </h2>
+
+        </div>
+
+
+        <div class="languages">
+
+            <div class="language">English</div>
+            <div class="language">Hindi</div>
+            <div class="language">Marathi</div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CONTACT
+========================= -->
 
 <section id="contact">
-<div class="container">
 
-<div class="contact">
+    <div class="container">
 
-<div>
-<h2>Let's connect.</h2>
-<p>I am interested in opportunities and conversations related to Data Science, Data Analytics, Machine Learning, Artificial Intelligence and technology.</p>
-</div>
+        <div class="contact-box">
 
-<div class="contact-links">
-<a href="mailto:atharvazore01@gmail.com" class="contact-link">Email</a>
-<a href="tel:+919067001867" class="contact-link">+91 9067001867</a>
-<a href="https://www.linkedin.com/in/atharvazore8400/" target="_blank" class="contact-link">LinkedIn</a>
-<a href="https://github.com/atharva8400" target="_blank" class="contact-link">GitHub</a>
-</div>
+            <div>
 
-</div>
-</div>
+                <h2>
+                    Let's connect.
+                </h2>
+
+                <p>
+                    I am interested in opportunities and professional
+                    conversations related to Data Science, Data Analytics,
+                    Machine Learning, Artificial Intelligence and technology.
+                </p>
+
+            </div>
+
+
+            <div class="contact-links">
+
+                <a
+                    href="mailto:atharvazore01@gmail.com"
+                    class="contact-link">
+                    Email
+                </a>
+
+                <a
+                    href="https://www.linkedin.com/in/atharvazore8400/"
+                    target="_blank"
+                    rel="noopener"
+                    class="contact-link">
+                    LinkedIn
+                </a>
+
+                <a
+                    href="https://github.com/atharva8400"
+                    target="_blank"
+                    rel="noopener"
+                    class="contact-link">
+                    GitHub
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
 </section>
 
+
+<!-- =========================
+     FOOTER
+========================= -->
+
 <footer>
-<div class="container footer">
-<div>© 2026 Atharva Vijay Zore</div>
-<div>Pune, Maharashtra, India · atharvazore01@gmail.com</div>
-</div>
+
+    <div class="container footer">
+
+        <div>
+            © 2026 Atharva Vijay Zore
+        </div>
+
+        <div>
+            Pune, Maharashtra, India ·
+            atharvazore01@gmail.com
+        </div>
+
+    </div>
+
 </footer>
+
 
 </body>
 </html>
