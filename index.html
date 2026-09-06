@@ -17,33 +17,18 @@
 
 <style>
 
-/* =========================================================
-   ROOT
-========================================================= */
-
 :root{
-
   --bg:#07070a;
   --surface:#0d0d12;
   --surface2:#111117;
-
   --text:#f8f8fb;
   --muted:#a4a4b1;
-
   --line:rgba(255,255,255,.10);
-
   --purple:#8b5cf6;
   --cyan:#22d3ee;
   --green:#55e6a5;
-
   --max:1180px;
-
 }
-
-
-/* =========================================================
-   RESET
-========================================================= */
 
 *{
   margin:0;
@@ -56,17 +41,11 @@ html{
 }
 
 body{
-
   font-family:"DM Sans",sans-serif;
-
   background:var(--bg);
-
   color:var(--text);
-
   line-height:1.7;
-
   overflow-x:hidden;
-
 }
 
 a{
@@ -78,522 +57,315 @@ button{
   font-family:inherit;
 }
 
-
-/* =========================================================
-   BACKGROUND
-========================================================= */
+/* BACKGROUND */
 
 body::before{
-
   content:"";
-
   position:fixed;
-
   inset:0;
-
   pointer-events:none;
-
   z-index:-5;
-
   background:
-
     radial-gradient(
       circle at 10% 10%,
       rgba(139,92,246,.18),
       transparent 28%
     ),
-
     radial-gradient(
       circle at 90% 20%,
       rgba(34,211,238,.12),
       transparent 25%
     ),
-
     radial-gradient(
       circle at 50% 90%,
       rgba(139,92,246,.10),
       transparent 30%
     );
-
 }
 
-
 body::after{
-
   content:"";
-
   position:fixed;
-
   inset:0;
-
   pointer-events:none;
-
   z-index:-4;
-
   opacity:.18;
-
   background-image:
-
     linear-gradient(
       rgba(255,255,255,.035) 1px,
       transparent 1px
     ),
-
     linear-gradient(
       90deg,
       rgba(255,255,255,.035) 1px,
       transparent 1px
     );
-
   background-size:70px 70px;
-
   mask-image:
     linear-gradient(
       to bottom,
       black,
       transparent 85%
     );
-
 }
-
-
-/* =========================================================
-   CONTAINER
-========================================================= */
 
 .container{
-
   width:min(92%,var(--max));
-
   margin:auto;
-
 }
 
-
-/* =========================================================
-   NOISE
-========================================================= */
+/* NOISE */
 
 .noise{
-
   position:fixed;
-
   inset:0;
-
   pointer-events:none;
-
   z-index:100;
-
   opacity:.025;
-
   background-image:url(
     "data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.7'/%3E%3C/svg%3E"
   );
-
 }
 
-
-/* =========================================================
-   CURSOR
-========================================================= */
+/* CURSOR */
 
 .cursor-glow{
-
   position:fixed;
-
   width:300px;
-
   height:300px;
-
   border-radius:50%;
-
   pointer-events:none;
-
   background:
     radial-gradient(
       circle,
       rgba(139,92,246,.12),
       transparent 68%
     );
-
   transform:translate(-50%,-50%);
-
   z-index:-1;
-
 }
 
-
-/* =========================================================
-   NAVBAR
-========================================================= */
+/* NAVBAR */
 
 nav{
-
   position:sticky;
-
   top:14px;
-
   z-index:50;
-
   width:min(94%,1080px);
-
   margin:14px auto 0;
-
   padding:9px 10px 9px 18px;
-
   border:1px solid var(--line);
-
   background:rgba(8,8,12,.72);
-
   backdrop-filter:blur(22px);
-
   border-radius:20px;
-
 }
 
 .navbar{
-
   display:flex;
-
   align-items:center;
-
   justify-content:space-between;
-
 }
 
 .logo{
-
   font:800 18px Manrope,sans-serif;
-
   letter-spacing:-.8px;
-
 }
 
 .logo span{
-
   color:var(--cyan);
-
 }
 
 .nav-links{
-
   display:flex;
-
   gap:22px;
-
   list-style:none;
-
   color:var(--muted);
-
   font-size:12px;
-
   font-weight:700;
-
 }
 
 .nav-links a{
-
   transition:.25s;
-
 }
 
 .nav-links a:hover{
-
   color:#fff;
-
 }
 
 .nav-actions{
-
   display:flex;
-
   align-items:center;
-
   gap:8px;
-
 }
 
 .icon-btn,
 .menu-btn{
-
   width:39px;
-
   height:39px;
-
   border-radius:12px;
-
   border:1px solid var(--line);
-
   background:rgba(255,255,255,.05);
-
   color:white;
-
   cursor:pointer;
-
 }
 
 .menu-btn{
-
   display:none;
-
 }
 
-
-/* =========================================================
-   HERO
-========================================================= */
+/* HERO */
 
 .hero{
-
   min-height:calc(100vh - 90px);
-
   display:flex;
-
   align-items:center;
-
   padding:70px 0 65px;
-
 }
 
 .hero-grid{
-
   display:grid;
-
   grid-template-columns:1.25fr .75fr;
-
   gap:60px;
-
   align-items:center;
-
 }
 
 .eyebrow{
-
   display:inline-flex;
-
   align-items:center;
-
   gap:9px;
-
   padding:7px 12px;
-
   border:1px solid var(--line);
-
   background:rgba(255,255,255,.04);
-
   border-radius:999px;
-
   color:#d4d4de;
-
   font-size:11px;
-
   font-weight:700;
-
   margin-bottom:24px;
-
 }
 
 .live-dot{
-
   width:7px;
-
   height:7px;
-
   border-radius:50%;
-
   background:var(--green);
-
   animation:pulse 1.8s infinite;
-
 }
 
 .hero h1{
-
   font:800 clamp(52px,8vw,94px)/.91 Manrope,sans-serif;
-
   letter-spacing:-5px;
-
 }
 
 .gradient-text{
-
   background:
-
     linear-gradient(
       100deg,
       #ffffff 15%,
       #b9a0ff 50%,
       #67e8f9 90%
     );
-
   -webkit-background-clip:text;
-
   background-clip:text;
-
   color:transparent;
-
 }
 
 .hero-role{
-
   margin:26px 0 14px;
-
   font-size:20px;
-
   font-weight:700;
-
   color:#dddde6;
-
 }
 
 .hero-desc{
-
   max-width:680px;
-
   color:var(--muted);
-
   font-size:16px;
-
 }
 
 .hero-actions{
-
   display:flex;
-
   flex-wrap:wrap;
-
   gap:10px;
-
   margin-top:29px;
-
 }
 
 .btn{
-
   display:inline-flex;
-
   align-items:center;
-
   justify-content:center;
-
   gap:8px;
-
   padding:12px 17px;
-
   border-radius:13px;
-
   border:1px solid var(--line);
-
   background:rgba(255,255,255,.05);
-
   font-size:12px;
-
   font-weight:800;
-
   transition:
-
     transform .25s,
     background .25s,
     border-color .25s;
-
 }
 
 .btn:hover{
-
   transform:translateY(-3px);
-
   background:rgba(139,92,246,.12);
-
   border-color:rgba(139,92,246,.6);
-
 }
 
 .btn-primary{
-
   background:
-
     linear-gradient(
       135deg,
       #8b5cf6,
       #6846df
     );
-
   border-color:transparent;
-
 }
-
 
 /* =========================================================
    PROFILE
+   PHOTO IS COMPLETELY STATIC AND UNCHANGED
 ========================================================= */
 
 .profile-wrap{
-
   position:relative;
-
   display:grid;
-
   place-items:center;
-
   min-height:390px;
-
 }
 
-
-/*
-   IMPORTANT:
-   NO SHADOW IS APPLIED TO THE PHOTO.
-*/
+/* Animated orbit is separate from the photo */
 
 .profile-orbit{
-
   position:absolute;
-
   width:350px;
-
   height:350px;
-
   border-radius:50%;
-
   border:1px dashed rgba(139,92,246,.40);
-
   animation:orbitSpin 20s linear infinite;
-
+  pointer-events:none;
 }
 
 .profile-orbit::before{
-
   content:"";
-
   position:absolute;
-
   width:9px;
-
   height:9px;
-
   border-radius:50%;
-
   background:var(--cyan);
-
   box-shadow:
     0 0 20px var(--cyan);
-
   top:24px;
-
   left:60px;
-
 }
 
+/* Animated ring surrounding photo */
+
 .profile-ring{
-
   position:relative;
-
   width:245px;
-
   height:295px;
-
   padding:4px;
-
   border-radius:
     125px
     125px
@@ -601,7 +373,6 @@ nav{
     38px;
 
   background:
-
     conic-gradient(
       from 0deg,
       var(--purple),
@@ -610,23 +381,16 @@ nav{
       var(--purple)
     );
 
-  animation:
-    ringRotate 8s linear infinite;
+  animation:ringRotate 8s linear infinite;
 
+  /* No filter is applied here that affects the image */
 }
 
-
-/*
-   PHOTO CONTAINER
-   NO SHADOW
-*/
+/* Photo container */
 
 .profile-inner{
-
   width:100%;
-
   height:100%;
-
   overflow:hidden;
 
   border-radius:
@@ -637,1081 +401,676 @@ nav{
 
   background:#111;
 
+  /* IMPORTANT:
+     No transform
+     No animation
+     No filter
+     No shadow
+  */
 }
 
-
-/*
-   PHOTO ITSELF
-   NO SHADOW
-   NO COLOR CHANGE
-*/
+/* =========================================================
+   ACTUAL PHOTO
+   EXACT ORIGINAL PASSPORT SIZE.PNG
+========================================================= */
 
 .profile-photo{
-
   width:100%;
-
   height:100%;
 
   object-fit:cover;
-
   object-position:center top;
 
   display:block;
 
-  filter:none;
+  /* ORIGINAL PHOTO — NOTHING CHANGES */
+  filter:none !important;
+  -webkit-filter:none !important;
+  opacity:1 !important;
+  transform:none !important;
+  animation:none !important;
+  box-shadow:none !important;
 
-  box-shadow:none;
-
-  animation:
-    photoFloat 5s ease-in-out infinite;
-
+  /* Prevent inherited visual changes */
+  mix-blend-mode:normal !important;
 }
 
+/* Badge */
+
 .profile-badge{
-
   position:absolute;
-
   right:-18px;
-
   bottom:25px;
-
   padding:11px 15px;
-
   border:1px solid var(--line);
-
   background:rgba(12,12,18,.86);
-
   backdrop-filter:blur(18px);
-
   border-radius:14px;
-
   font-size:11px;
-
   font-weight:800;
-
 }
 
 .profile-badge span{
-
   display:block;
-
   color:var(--green);
-
   font-size:9px;
-
   letter-spacing:1px;
-
   margin-bottom:2px;
-
 }
 
-
-/* =========================================================
-   MARQUEE
-========================================================= */
+/* MARQUEE */
 
 .marquee{
-
   overflow:hidden;
-
   border-top:1px solid var(--line);
-
   border-bottom:1px solid var(--line);
-
   background:rgba(255,255,255,.025);
-
 }
 
 .marquee-track{
-
   display:flex;
-
   width:max-content;
-
   animation:marquee 25s linear infinite;
-
 }
 
 .marquee-item{
-
   padding:15px 27px;
-
   color:#888894;
-
   font-size:11px;
-
   font-weight:800;
-
   letter-spacing:1.6px;
-
   white-space:nowrap;
-
 }
 
 .dotsep{
-
   color:var(--cyan);
-
   margin-left:25px;
-
 }
 
-
-/* =========================================================
-   SECTIONS
-========================================================= */
+/* SECTIONS */
 
 section{
-
   padding:110px 0;
-
 }
 
 .section-head{
-
   display:flex;
-
   align-items:end;
-
   justify-content:space-between;
-
   gap:25px;
-
   margin-bottom:38px;
-
 }
 
 .kicker{
-
   color:#a38cff;
-
   font-size:10px;
-
   font-weight:800;
-
   letter-spacing:1.8px;
-
   text-transform:uppercase;
-
   margin-bottom:8px;
-
 }
 
 .section-title{
-
   font:800 clamp(34px,5vw,58px)/1.02 Manrope,sans-serif;
-
   letter-spacing:-3px;
-
 }
 
 .section-desc{
-
   max-width:580px;
-
   color:var(--muted);
-
   font-size:14px;
-
 }
 
-
-/* =========================================================
-   CARDS
-========================================================= */
+/* CARDS */
 
 .card,
 .bento-card{
-
   position:relative;
-
   overflow:hidden;
-
   padding:28px;
-
   border-radius:26px;
-
   border:1px solid var(--line);
-
   background:
-
     linear-gradient(
       145deg,
       rgba(255,255,255,.075),
       rgba(255,255,255,.03)
     );
-
   transition:
-
     transform .35s,
     border-color .35s;
-
 }
 
 .card:hover,
 .bento-card:hover{
-
   transform:translateY(-6px);
-
   border-color:
     rgba(139,92,246,.45);
-
 }
 
 .card::before,
 .bento-card::before{
-
   content:"";
-
   position:absolute;
-
   width:180px;
-
   height:180px;
-
   right:-80px;
-
   top:-90px;
-
   border-radius:50%;
-
   background:
     radial-gradient(
       circle,
       rgba(139,92,246,.17),
       transparent 70%
     );
-
   pointer-events:none;
-
 }
 
-
-/* =========================================================
-   ABOUT
-========================================================= */
+/* ABOUT */
 
 .bento{
-
   display:grid;
-
   grid-template-columns:1.25fr .75fr;
-
   gap:14px;
-
 }
 
 .bento-main{
-
   min-height:315px;
-
   display:flex;
-
   flex-direction:column;
-
   justify-content:space-between;
-
 }
 
 .big-number{
-
   font:800 72px/1 Manrope,sans-serif;
-
   letter-spacing:-5px;
-
 }
 
 .muted{
-
   color:var(--muted);
-
 }
 
 .detail-stack{
-
   display:grid;
-
   gap:14px;
-
 }
 
 .detail{
-
   padding:24px;
-
 }
 
 .detail strong{
-
   display:block;
-
   margin-bottom:5px;
-
 }
 
 .detail span{
-
   color:var(--muted);
-
   font-size:12px;
-
 }
 
-
-/* =========================================================
-   EXPERIENCE
-========================================================= */
+/* EXPERIENCE */
 
 .experience-list{
-
   display:grid;
-
   gap:14px;
-
 }
 
 .experience{
-
   display:grid;
-
   grid-template-columns:190px 1fr;
-
   gap:35px;
-
 }
 
 .date{
-
   color:#8e8e9a;
-
   font-size:11px;
-
   font-weight:700;
-
   letter-spacing:.8px;
-
   text-transform:uppercase;
-
 }
 
 .card h3{
-
   font:800 23px/1.2 Manrope,sans-serif;
-
 }
 
 .company{
-
   color:#b7a1ff;
-
   font-weight:800;
-
   margin:5px 0 13px;
-
 }
 
 .card p{
-
   color:var(--muted);
-
   font-size:13px;
-
 }
 
 .tags{
-
   display:flex;
-
   flex-wrap:wrap;
-
   gap:7px;
-
   margin-top:16px;
-
 }
 
 .tag{
-
   padding:6px 9px;
-
   border:1px solid var(--line);
-
   border-radius:999px;
-
   background:rgba(255,255,255,.045);
-
   color:#d3d3dc;
-
   font-size:10px;
-
   font-weight:800;
-
 }
 
-
-/* =========================================================
-   EDUCATION
-========================================================= */
+/* EDUCATION */
 
 .education-grid{
-
   display:grid;
-
   grid-template-columns:repeat(2,1fr);
-
   gap:14px;
-
 }
 
 .education-card{
-
   min-height:255px;
-
 }
 
 .badge{
-
   display:inline-block;
-
   padding:5px 9px;
-
   margin-bottom:20px;
-
   border-radius:999px;
-
   background:rgba(139,92,246,.13);
-
   color:#c7b8ff;
-
   font-size:9px;
-
   font-weight:800;
-
   letter-spacing:.7px;
-
 }
 
 .grade{
-
   margin-top:22px;
-
   padding-top:18px;
-
   border-top:1px solid var(--line);
-
   font:800 30px Manrope,sans-serif;
-
 }
 
 .grade small{
-
   display:block;
-
   color:var(--muted);
-
   font:400 11px "DM Sans";
-
 }
 
-
-/* =========================================================
-   PROJECTS
-========================================================= */
+/* PROJECTS */
 
 .projects-grid{
-
   display:grid;
-
   grid-template-columns:repeat(2,1fr);
-
   gap:14px;
-
 }
 
 .project{
-
   min-height:300px;
-
   display:flex;
-
   flex-direction:column;
-
 }
 
 .project-type{
-
   color:#67e8f9;
-
   font-size:9px;
-
   font-weight:800;
-
   letter-spacing:1.4px;
-
   text-transform:uppercase;
-
   margin-bottom:15px;
-
 }
 
 .project p{
-
   margin-top:6px;
-
 }
 
 .project .tags{
-
   margin-top:auto;
-
 }
 
-
-/* =========================================================
-   NAIP
-========================================================= */
+/* NAIP */
 
 .naip{
-
   display:grid;
-
   grid-template-columns:1fr .8fr;
-
   gap:30px;
-
   align-items:center;
-
 }
 
 .naip ul{
-
   padding-left:18px;
-
   color:var(--muted);
-
   font-size:13px;
-
 }
 
 .naip li+li{
-
   margin-top:9px;
-
 }
 
-
-/* =========================================================
-   SKILLS
-========================================================= */
+/* SKILLS */
 
 .skills-grid{
-
   display:grid;
-
   grid-template-columns:repeat(2,1fr);
-
   gap:14px;
-
 }
 
 .skill{
-
   padding:23px;
-
 }
 
 .skill strong{
-
   display:block;
-
   margin-bottom:7px;
-
 }
 
 .skill span{
-
   color:var(--muted);
-
   font-size:12px;
-
 }
 
-
-/* =========================================================
-   CERTIFICATIONS
-========================================================= */
+/* CERTIFICATIONS */
 
 .certifications{
-
   display:grid;
-
   grid-template-columns:repeat(2,1fr);
-
   gap:14px;
-
 }
 
 .certificate{
-
   display:flex;
-
   justify-content:space-between;
-
   gap:20px;
-
 }
 
 .certificate-title{
-
   font-weight:800;
-
   font-size:13px;
-
 }
 
 .certificate-provider{
-
   color:var(--muted);
-
   font-size:11px;
-
   margin-top:3px;
-
 }
 
 .certificate-year{
-
   color:#8f8f9b;
-
   font-size:10px;
-
 }
 
-
-/* =========================================================
-   LANGUAGES
-========================================================= */
+/* LANGUAGES */
 
 .languages{
-
   display:flex;
-
   flex-wrap:wrap;
-
   gap:10px;
-
 }
 
 .language{
-
   padding:10px 16px;
-
   border:1px solid var(--line);
-
   border-radius:999px;
-
   background:rgba(255,255,255,.04);
-
   font-size:12px;
-
   font-weight:700;
-
 }
 
-
-/* =========================================================
-   CONTACT
-========================================================= */
+/* CONTACT */
 
 .contact{
-
   position:relative;
-
   overflow:hidden;
-
   text-align:center;
-
   padding:80px 30px;
-
   border-radius:32px;
-
   border:1px solid var(--line);
-
   background:
-
     linear-gradient(
       145deg,
       rgba(139,92,246,.15),
       rgba(34,211,238,.07)
     );
-
 }
 
 .contact h2{
-
   font:800 clamp(42px,7vw,78px)/.95 Manrope,sans-serif;
-
   letter-spacing:-4px;
-
 }
 
 .contact p{
-
   max-width:650px;
-
   margin:18px auto;
-
   color:var(--muted);
-
   font-size:14px;
-
 }
 
 .contact-links{
-
   display:flex;
-
   justify-content:center;
-
   flex-wrap:wrap;
-
   gap:10px;
-
   margin-top:25px;
-
 }
 
-
-/* =========================================================
-   FOOTER
-========================================================= */
+/* FOOTER */
 
 footer{
-
   padding:35px 0;
-
   color:#777783;
-
   font-size:11px;
-
 }
 
 .footer{
-
   display:flex;
-
   justify-content:space-between;
-
   gap:20px;
-
 }
 
-
-/* =========================================================
-   REVEAL
-========================================================= */
+/* REVEAL */
 
 .reveal{
-
   opacity:0;
-
   transform:translateY(25px);
-
   transition:
-
     opacity .7s ease,
     transform .7s ease;
-
 }
 
 .reveal.visible{
-
   opacity:1;
-
   transform:none;
-
 }
 
+/* ANIMATIONS */
 
-/* =========================================================
-   ANIMATIONS
-========================================================= */
-
-@keyframes photoFloat{
-
-  0%,100%{
-    transform:translateY(0);
-  }
-
-  50%{
-    transform:translateY(-9px);
-  }
-
-}
+/* NOTE:
+   There is NO photo animation here.
+*/
 
 @keyframes orbitSpin{
-
   to{
     transform:rotate(360deg);
   }
-
 }
 
 @keyframes ringRotate{
-
   to{
-    filter:hue-rotate(360deg);
+    transform:rotate(360deg);
   }
-
 }
 
 @keyframes pulse{
-
   50%{
-
     box-shadow:
       0 0 0 7px rgba(85,230,165,.06),
       0 0 18px var(--green);
-
   }
-
 }
 
 @keyframes marquee{
-
   to{
     transform:translateX(-50%);
   }
-
 }
 
-
-/* =========================================================
-   TABLET
-========================================================= */
+/* TABLET */
 
 @media(max-width:900px){
 
   .hero-grid,
   .bento,
   .naip{
-
     grid-template-columns:1fr;
-
   }
 
   .hero{
-
     padding-top:55px;
-
   }
 
   .profile-wrap{
-
     margin:30px 0;
-
   }
 
   .nav-links{
-
     display:none;
-
   }
 
   .menu-btn{
-
     display:block;
-
   }
 
   .nav-open .nav-links{
-
     display:flex;
-
     position:absolute;
-
     left:10px;
-
     right:10px;
-
     top:64px;
-
     flex-direction:column;
-
     padding:18px;
-
     background:rgba(10,10,14,.97);
-
     border:1px solid var(--line);
-
     border-radius:17px;
-
   }
 
   .experience{
-
     grid-template-columns:1fr;
-
     gap:12px;
-
   }
 
   .projects-grid,
   .education-grid,
   .skills-grid,
   .certifications{
-
     grid-template-columns:1fr;
-
   }
 
   .section-head{
-
     display:block;
-
   }
 
   .section-desc{
-
     margin-top:12px;
-
   }
-
 }
 
-
-/* =========================================================
-   MOBILE
-========================================================= */
+/* MOBILE */
 
 @media(max-width:600px){
 
   nav{
-
     top:8px;
-
     margin-top:8px;
-
   }
 
   .hero{
-
     padding-top:45px;
-
   }
 
   .hero h1{
-
     letter-spacing:-3px;
-
   }
 
   .hero-role{
-
     font-size:17px;
-
   }
 
   .hero-desc{
-
     font-size:14px;
-
   }
 
   .profile-ring{
-
     width:210px;
-
     height:255px;
-
   }
 
   .profile-orbit{
-
     width:285px;
-
     height:285px;
-
   }
 
   .profile-badge{
-
     right:-5px;
-
   }
 
   .card,
   .bento-card{
-
     padding:22px;
-
   }
 
   .big-number{
-
     font-size:55px;
-
   }
 
   .contact{
-
     padding:55px 20px;
-
   }
 
   .contact h2{
-
     letter-spacing:-3px;
-
   }
 
   .footer{
-
     flex-direction:column;
-
   }
 
   .cursor-glow{
-
     display:none;
-
   }
-
 }
 
-
-/* =========================================================
-   REDUCED MOTION
-========================================================= */
+/* REDUCED MOTION */
 
 @media(prefers-reduced-motion:reduce){
 
   *{
-
     animation:none!important;
-
     transition:none!important;
-
     scroll-behavior:auto!important;
-
   }
 
   .reveal{
-
     opacity:1;
-
     transform:none;
-
   }
 
+  /* Photo remains unchanged regardless of motion settings */
+  .profile-photo{
+    filter:none!important;
+    -webkit-filter:none!important;
+    opacity:1!important;
+    transform:none!important;
+    animation:none!important;
+    box-shadow:none!important;
+  }
 }
 
 </style>
 </head>
 
-
 <body>
-
 
 <div class="noise"></div>
 
@@ -1720,23 +1079,15 @@ footer{
   id="cursorGlow">
 </div>
 
-
-<!-- =======================================================
-     NAVIGATION
-======================================================== -->
+<!-- NAVIGATION -->
 
 <nav id="nav">
 
   <div class="navbar">
 
-    <a
-      class="logo"
-      href="#">
-
+    <a class="logo" href="#">
       ATHARVA<span>.</span>
-
     </a>
-
 
     <ul class="nav-links">
 
@@ -1766,26 +1117,20 @@ footer{
 
     </ul>
 
-
     <div class="nav-actions">
 
       <button
         class="icon-btn"
         id="themeBtn"
         aria-label="Toggle theme">
-
         ☼
-
       </button>
-
 
       <button
         class="menu-btn"
         id="menuBtn"
         aria-label="Open menu">
-
         ☰
-
       </button>
 
     </div>
@@ -1794,19 +1139,13 @@ footer{
 
 </nav>
 
-
-
-<!-- =======================================================
-     HERO
-======================================================== -->
+<!-- HERO -->
 
 <header class="hero">
 
   <div class="container hero-grid">
 
-
     <div class="reveal">
-
 
       <div class="eyebrow">
 
@@ -1816,7 +1155,6 @@ footer{
 
       </div>
 
-
       <h1>
 
         Atharva
@@ -1824,20 +1162,14 @@ footer{
         <br>
 
         <span class="gradient-text">
-
           Vijay Zore.
-
         </span>
 
       </h1>
 
-
       <div class="hero-role">
-
         Data Science · Data Analytics · Machine Learning
-
       </div>
-
 
       <p class="hero-desc">
 
@@ -1848,100 +1180,71 @@ footer{
 
       </p>
 
-
       <div class="hero-actions">
-
 
         <a
           class="btn btn-primary"
           href="#projects">
-
           View Projects ↗
-
         </a>
-
 
         <a
           class="btn"
           href="#experience">
-
           Experience
-
         </a>
-
 
         <a
           class="btn"
           href="https://www.linkedin.com/in/atharvazore8400/"
           target="_blank"
           rel="noopener">
-
           LinkedIn ↗
-
         </a>
-
 
         <a
           class="btn"
           href="https://github.com/atharva8400"
           target="_blank"
           rel="noopener">
-
           GitHub ↗
-
         </a>
-
 
       </div>
 
     </div>
 
-
-
-    <!-- =================================================
-         PROFILE PHOTO
-    ================================================== -->
+    <!-- PROFILE PHOTO -->
 
     <div class="profile-wrap reveal">
 
-
+      <!-- Animated element behind photo -->
       <div class="profile-orbit"></div>
 
-
+      <!-- Animated border around photo -->
       <div class="profile-ring">
-
 
         <div class="profile-inner">
 
-
+          <!-- EXACT ORIGINAL PHOTO -->
           <img
-
             src="PASSPORT%20SIZE.png"
-
             alt="Atharva Vijay Zore"
-
-            class="profile-photo"
-
-          >
-
+            class="profile-photo">
 
         </div>
 
       </div>
 
-
       <div class="profile-badge">
 
         <span>
-
           UPCOMING
-
         </span>
 
         MSc Data Science · York
 
       </div>
-
 
     </div>
 
@@ -1949,133 +1252,79 @@ footer{
 
 </header>
 
-
-
-<!-- =======================================================
-     MARQUEE
-======================================================== -->
+<!-- MARQUEE -->
 
 <div class="marquee">
 
   <div class="marquee-track">
 
-
     <div class="marquee-item">
-
       DATA SCIENCE
-
       <span class="dotsep">✦</span>
-
     </div>
 
-
     <div class="marquee-item">
-
       MACHINE LEARNING
-
       <span class="dotsep">✦</span>
-
     </div>
 
-
     <div class="marquee-item">
-
       DATA ANALYTICS
-
       <span class="dotsep">✦</span>
-
     </div>
 
-
     <div class="marquee-item">
-
       ARTIFICIAL INTELLIGENCE
-
       <span class="dotsep">✦</span>
-
     </div>
 
-
     <div class="marquee-item">
-
       PYTHON
-
       <span class="dotsep">✦</span>
-
     </div>
 
-
     <div class="marquee-item">
-
       DATA SCIENCE
-
       <span class="dotsep">✦</span>
-
     </div>
 
-
     <div class="marquee-item">
-
       MACHINE LEARNING
-
       <span class="dotsep">✦</span>
-
     </div>
 
-
     <div class="marquee-item">
-
       DATA ANALYTICS
-
       <span class="dotsep">✦</span>
-
     </div>
 
-
     <div class="marquee-item">
-
       ARTIFICIAL INTELLIGENCE
-
       <span class="dotsep">✦</span>
-
     </div>
-
 
     <div class="marquee-item">
-
       PYTHON
-
       <span class="dotsep">✦</span>
-
     </div>
-
 
   </div>
 
 </div>
 
-
-
-<!-- =======================================================
-     ABOUT
-======================================================== -->
+<!-- ABOUT -->
 
 <section id="about">
 
   <div class="container">
 
-
     <div class="section-head reveal">
-
 
       <div>
 
         <div class="kicker">
-
           01 — About
-
         </div>
-
 
         <h2 class="section-title">
 
@@ -2089,7 +1338,6 @@ footer{
 
       </div>
 
-
       <p class="section-desc">
 
         A modern profile built around practical data work,
@@ -2097,41 +1345,27 @@ footer{
 
       </p>
 
-
     </div>
-
-
 
     <div class="bento">
 
-
       <article class="bento-card bento-main reveal">
-
 
         <div>
 
           <div class="kicker">
-
             PROFILE
-
           </div>
-
 
           <div class="big-number">
-
             7.50
-
           </div>
 
-
           <p class="muted">
-
             Final CGPA / 10 · Bachelor of Computer Science (Honours)
-
           </p>
 
         </div>
-
 
         <p class="muted">
 
@@ -2142,68 +1376,46 @@ footer{
 
         </p>
 
-
       </article>
-
-
 
       <div class="detail-stack">
 
-
         <article class="bento-card detail reveal">
 
           <strong>
-
             Professional Focus
-
           </strong>
 
-
           <span>
-
             Data Science · Data Analytics · Machine Learning
-
           </span>
 
         </article>
 
-
         <article class="bento-card detail reveal">
 
           <strong>
-
             Industry Exposure
-
           </strong>
 
-
           <span>
-
             6-month Data Science internship +
             6-month Data Analyst internship
-
           </span>
 
         </article>
-
 
         <article class="bento-card detail reveal">
 
           <strong>
-
             Next Academic Stage
-
           </strong>
 
-
           <span>
-
             MSc Data Science · University of York · September 2026
-
           </span>
 
         </article>
-
 
       </div>
 
@@ -2213,37 +1425,25 @@ footer{
 
 </section>
 
-
-
-<!-- =======================================================
-     EXPERIENCE
-======================================================== -->
+<!-- EXPERIENCE -->
 
 <section id="experience">
 
   <div class="container">
 
-
     <div class="section-head reveal">
-
 
       <div>
 
         <div class="kicker">
-
           02 — Experience
-
         </div>
 
-
         <h2 class="section-title">
-
           Professional experience.
-
         </h2>
 
       </div>
-
 
       <p class="section-desc">
 
@@ -2252,43 +1452,29 @@ footer{
 
       </p>
 
-
     </div>
-
-
 
     <div class="experience-list">
 
-
       <article class="card experience reveal">
-
 
         <div class="date">
 
           6 Months
-
           <br>
-
           Online Internship
 
         </div>
 
-
         <div>
 
           <h3>
-
             Data Science Intern
-
           </h3>
 
-
           <div class="company">
-
             Developers Arena
-
           </div>
-
 
           <p>
 
@@ -2298,15 +1484,11 @@ footer{
 
           </p>
 
-
           <div class="tags">
 
             <span class="tag">Data Science</span>
-
             <span class="tag">Python</span>
-
             <span class="tag">Data Analysis</span>
-
             <span class="tag">Machine Learning</span>
 
           </div>
@@ -2315,37 +1497,25 @@ footer{
 
       </article>
 
-
-
       <article class="card experience reveal">
-
 
         <div class="date">
 
           6 Months
-
           <br>
-
           Offline Internship
 
         </div>
 
-
         <div>
 
           <h3>
-
             Data Analyst Intern
-
           </h3>
 
-
           <div class="company">
-
             Maestro Intellect
-
           </div>
-
 
           <p>
 
@@ -2356,15 +1526,11 @@ footer{
 
           </p>
 
-
           <div class="tags">
 
             <span class="tag">Data Analytics</span>
-
             <span class="tag">EDA</span>
-
             <span class="tag">Data Cleaning</span>
-
             <span class="tag">Data Insights</span>
 
           </div>
@@ -2373,242 +1539,155 @@ footer{
 
       </article>
 
-
     </div>
 
   </div>
 
 </section>
 
-
-
-<!-- =======================================================
-     EDUCATION
-======================================================== -->
+<!-- EDUCATION -->
 
 <section id="education">
 
   <div class="container">
 
-
     <div class="section-head reveal">
-
 
       <div>
 
         <div class="kicker">
-
           03 — Education
-
         </div>
 
-
         <h2 class="section-title">
-
           Academic journey.
-
         </h2>
 
       </div>
 
-
     </div>
-
-
 
     <div class="education-grid">
 
-
       <article class="card education-card reveal">
 
-
         <span class="badge">
-
           COMPLETED · 2026
-
         </span>
 
-
         <h3>
-
           Bachelor of Computer Science (Honours)
-
         </h3>
 
-
         <div class="company">
-
           MIT World Peace University
-
         </div>
 
-
         <p>
-
           Pune, Maharashtra · 2022 – 2026
-
         </p>
-
 
         <div class="grade">
 
           7.50 / 10
 
           <small>
-
             Final Cumulative Grade Point Average
-
           </small>
 
         </div>
 
-
       </article>
-
-
 
       <article class="card education-card reveal">
 
-
         <span class="badge">
-
           UPCOMING · SEPTEMBER 2026
-
         </span>
 
-
         <h3>
-
           MSc Data Science
-
         </h3>
 
-
         <div class="company">
-
           University of York
-
         </div>
 
-
         <p>
-
           United Kingdom · Department of Computer Science
-
         </p>
-
 
         <div class="grade">
 
           2026
 
           <small>
-
             September Intake · Full-Time
-
           </small>
 
         </div>
 
-
       </article>
-
-
 
       <article class="card education-card reveal">
 
-
         <span class="badge">
-
           COMPLETED · 2022
-
         </span>
 
-
         <h3>
-
           Higher Secondary Education
-
         </h3>
 
-
         <div class="company">
-
           MIT Junior College
-
         </div>
 
-
         <p>
-
           Class XII · 2021 – 2022
-
         </p>
-
 
         <div class="grade">
 
           56.67%
 
           <small>
-
             Final Percentage
-
           </small>
 
         </div>
 
-
       </article>
-
-
 
       <article class="card education-card reveal">
 
-
         <span class="badge">
-
           COMPLETED · 2020
-
         </span>
 
-
         <h3>
-
           Secondary School Education
-
         </h3>
 
-
         <div class="company">
-
           MIT VGS School
-
         </div>
 
-
         <p>
-
           Class X · 2019 – 2020
-
         </p>
-
 
         <div class="grade">
 
           84%
 
           <small>
-
             Final Percentage
-
           </small>
 
         </div>
 
-
       </article>
-
 
     </div>
 
@@ -2616,37 +1695,25 @@ footer{
 
 </section>
 
-
-
-<!-- =======================================================
-     PROJECTS
-======================================================== -->
+<!-- PROJECTS -->
 
 <section id="projects">
 
   <div class="container">
 
-
     <div class="section-head reveal">
-
 
       <div>
 
         <div class="kicker">
-
           04 — Projects
-
         </div>
 
-
         <h2 class="section-title">
-
           Selected academic work.
-
         </h2>
 
       </div>
-
 
       <p class="section-desc">
 
@@ -2656,30 +1723,19 @@ footer{
 
       </p>
 
-
     </div>
-
-
 
     <div class="projects-grid">
 
-
       <article class="card project reveal">
 
-
         <div class="project-type">
-
           Machine Learning · NLP
-
         </div>
 
-
         <h3>
-
           Fake News Detection System
-
         </h3>
-
 
         <p>
 
@@ -2690,42 +1746,27 @@ footer{
 
         </p>
 
-
         <div class="tags">
 
           <span class="tag">Python</span>
-
           <span class="tag">BERT</span>
-
           <span class="tag">Scikit-learn</span>
-
           <span class="tag">FastAPI</span>
-
           <span class="tag">Streamlit</span>
 
         </div>
 
-
       </article>
-
-
 
       <article class="card project reveal">
 
-
         <div class="project-type">
-
           Artificial Intelligence · Computer Vision
-
         </div>
 
-
         <h3>
-
           AI-Driven Smart Traffic Management System
-
         </h3>
-
 
         <p>
 
@@ -2736,22 +1777,16 @@ footer{
 
         </p>
 
-
         <div class="tags">
 
           <span class="tag">Python</span>
-
           <span class="tag">OpenCV</span>
-
           <span class="tag">Pygame</span>
-
           <span class="tag">Artificial Intelligence</span>
 
         </div>
 
-
       </article>
-
 
     </div>
 
@@ -2759,116 +1794,74 @@ footer{
 
 </section>
 
-
-
-<!-- =======================================================
-     NAIP
-======================================================== -->
+<!-- NAIP -->
 
 <section>
 
   <div class="container">
 
-
     <div class="section-head reveal">
-
 
       <div>
 
         <div class="kicker">
-
           05 — Academic Program
-
         </div>
 
-
         <h2 class="section-title">
-
           Industry-oriented learning.
-
         </h2>
 
       </div>
 
-
     </div>
-
-
 
     <article class="card naip reveal">
 
-
       <div>
 
-
         <div class="kicker">
-
           NAIP · JULY 2024
-
         </div>
-
 
         <h3>
-
           National Academic Immersion Program
-
         </h3>
 
-
         <div class="company">
-
           NITTTR-Siemens Centre of Excellence
-
         </div>
-
 
         <div class="tags">
 
           <span class="tag">IoT</span>
-
           <span class="tag">Siemens Asset Manager</span>
-
           <span class="tag">Insights Hub</span>
-
           <span class="tag">Node-RED</span>
 
         </div>
 
-
       </div>
-
-
 
       <ul>
 
-
         <li>
-
           Completed an intensive immersion programme focused
           on the Industrial Internet of Things (IoT) Lab.
-
         </li>
 
-
         <li>
-
           Built a virtual IoT model for a motor pump using
           Siemens Asset Manager and monitored systems through
           Siemens Insights Hub.
-
         </li>
-
 
         <li>
-
           Implemented virtual programming logic using Node-RED
           to automate system responses.
-
         </li>
 
-
       </ul>
-
 
     </article>
 
@@ -2876,161 +1869,105 @@ footer{
 
 </section>
 
-
-
-<!-- =======================================================
-     SKILLS
-======================================================== -->
+<!-- SKILLS -->
 
 <section id="skills">
 
   <div class="container">
 
-
     <div class="section-head reveal">
-
 
       <div>
 
         <div class="kicker">
-
           06 — Skills
-
         </div>
 
-
         <h2 class="section-title">
-
           Technical capabilities.
-
         </h2>
 
       </div>
 
-
     </div>
-
-
 
     <div class="skills-grid">
 
-
       <article class="card skill reveal">
 
         <strong>
-
           Programming & Data
-
         </strong>
 
-
         <span>
-
           Python · SQL · Data Analysis · Data Cleaning
-
         </span>
 
       </article>
 
-
-
       <article class="card skill reveal">
 
         <strong>
-
           Data Science
-
         </strong>
 
-
         <span>
-
           Machine Learning · Exploratory Data Analysis
           · Data-driven Problem Solving
-
         </span>
 
       </article>
 
-
-
       <article class="card skill reveal">
 
         <strong>
-
           Artificial Intelligence
-
         </strong>
 
-
         <span>
-
           BERT Transformers · Computer Vision · OpenCV
           · AI Applications
-
         </span>
 
       </article>
 
-
-
       <article class="card skill reveal">
 
         <strong>
-
           Frameworks & Libraries
-
         </strong>
 
-
         <span>
-
           Scikit-learn · FastAPI · Streamlit · Pygame
-
         </span>
 
       </article>
 
-
-
       <article class="card skill reveal">
 
         <strong>
-
           IoT & Industrial Technologies
-
         </strong>
 
-
         <span>
-
           IoT Concepts · Siemens Asset Manager · Siemens
           Insights Hub · Node-RED
-
         </span>
 
       </article>
-
-
 
       <article class="card skill reveal">
 
         <strong>
-
           Professional Skills
-
         </strong>
 
-
         <span>
-
           Project Management · Teamwork · Leadership ·
           Time Management · Critical Thinking · Communication
-
         </span>
 
       </article>
-
 
     </div>
 
@@ -3038,112 +1975,70 @@ footer{
 
 </section>
 
-
-
-<!-- =======================================================
-     CERTIFICATIONS
-======================================================== -->
+<!-- CERTIFICATIONS -->
 
 <section>
 
   <div class="container">
 
-
     <div class="section-head reveal">
-
 
       <div>
 
         <div class="kicker">
-
           07 — Certifications
-
         </div>
 
-
         <h2 class="section-title">
-
           Professional learning.
-
         </h2>
 
       </div>
 
-
     </div>
-
-
 
     <div class="certifications">
 
-
       <article class="card certificate reveal">
-
 
         <div>
 
-
           <div class="certificate-title">
-
             Oracle Cloud Infrastructure 2025
             Certified Data Science Professional
-
           </div>
-
 
           <div class="certificate-provider">
-
             Oracle
-
           </div>
 
-
         </div>
-
 
         <div class="certificate-year">
-
           2025
-
         </div>
 
-
       </article>
-
-
 
       <article class="card certificate reveal">
 
-
         <div>
 
-
           <div class="certificate-title">
-
             IBM Data Science Professional Certificate
-
           </div>
-
 
           <div class="certificate-provider">
-
             IBM · Coursera
-
           </div>
 
-
         </div>
-
 
         <div class="certificate-year">
-
           2025
-
         </div>
 
-
       </article>
-
 
     </div>
 
@@ -3151,65 +2046,41 @@ footer{
 
 </section>
 
-
-
-<!-- =======================================================
-     LANGUAGES
-======================================================== -->
+<!-- LANGUAGES -->
 
 <section>
 
   <div class="container">
 
-
     <div class="section-head reveal">
-
 
       <div>
 
         <div class="kicker">
-
           08 — Languages
-
         </div>
 
-
         <h2 class="section-title">
-
           Communication.
-
         </h2>
 
       </div>
 
-
     </div>
-
-
 
     <div class="languages reveal">
 
-
       <div class="language">
-
         English
-
       </div>
 
-
       <div class="language">
-
         Hindi
-
       </div>
-
 
       <div class="language">
-
         Marathi
-
       </div>
-
 
     </div>
 
@@ -3217,33 +2088,21 @@ footer{
 
 </section>
 
-
-
-<!-- =======================================================
-     CONTACT
-======================================================== -->
+<!-- CONTACT -->
 
 <section id="contact">
 
   <div class="container">
 
-
     <div class="contact reveal">
 
-
       <div class="kicker">
-
         09 — Contact
-
       </div>
 
-
       <h2>
-
         Let's connect.
-
       </h2>
-
 
       <p>
 
@@ -3253,43 +2112,31 @@ footer{
 
       </p>
 
-
       <div class="contact-links">
-
 
         <a
           class="btn btn-primary"
           href="mailto:atharvazore01@gmail.com">
-
           Email ↗
-
         </a>
-
 
         <a
           class="btn"
           href="https://www.linkedin.com/in/atharvazore8400/"
           target="_blank"
           rel="noopener">
-
           LinkedIn ↗
-
         </a>
-
 
         <a
           class="btn"
           href="https://github.com/atharva8400"
           target="_blank"
           rel="noopener">
-
           GitHub ↗
-
         </a>
 
-
       </div>
-
 
     </div>
 
@@ -3297,43 +2144,28 @@ footer{
 
 </section>
 
-
-
-<!-- =======================================================
-     FOOTER
-======================================================== -->
+<!-- FOOTER -->
 
 <footer>
 
   <div class="container footer">
 
-
     <div>
-
       © 2026 Atharva Vijay Zore
-
     </div>
 
-
     <div>
-
       Pune, Maharashtra, India ·
       atharvazore01@gmail.com
-
     </div>
-
 
   </div>
 
 </footer>
 
-
-
 <script>
 
-/* =========================================================
-   CURSOR GLOW
-========================================================= */
+/* CURSOR GLOW */
 
 const glow =
   document.getElementById("cursorGlow");
@@ -3355,10 +2187,7 @@ window.addEventListener(
   }
 );
 
-
-/* =========================================================
-   MOBILE MENU
-========================================================= */
+/* MOBILE MENU */
 
 const nav =
   document.getElementById("nav");
@@ -3375,7 +2204,6 @@ menu.addEventListener(
   }
 );
 
-
 document
   .querySelectorAll(".nav-links a")
   .forEach((link) => {
@@ -3391,10 +2219,7 @@ document
 
   });
 
-
-/* =========================================================
-   SCROLL REVEAL
-========================================================= */
+/* SCROLL REVEAL */
 
 const observer =
   new IntersectionObserver(
@@ -3427,7 +2252,6 @@ const observer =
 
   );
 
-
 document
   .querySelectorAll(".reveal")
   .forEach(
@@ -3438,10 +2262,7 @@ document
     }
   );
 
-
-/* =========================================================
-   CARD HOVER
-========================================================= */
+/* CARD HOVER */
 
 document
   .querySelectorAll(".card,.btn")
@@ -3476,7 +2297,6 @@ document
         }
       );
 
-
       element.addEventListener(
         "pointerleave",
         () => {
@@ -3489,14 +2309,10 @@ document
     }
   );
 
-
-/* =========================================================
-   DARK / LIGHT MODE
-========================================================= */
+/* DARK / LIGHT MODE */
 
 const themeButton =
   document.getElementById("themeBtn");
-
 
 themeButton.addEventListener(
   "click",
@@ -3504,7 +2320,6 @@ themeButton.addEventListener(
 
     const light =
       document.body.classList.toggle("light");
-
 
     if(light){
 
